@@ -1,7 +1,6 @@
-
 from dataflows import *
-from tools.rename_field import rename_field
-from tools.joined_lower import joined_lower
+from lib.rename_field import rename_field
+from lib.joined_lower import joined_lower
 import datetime
 import zipfile
 import requests
@@ -28,7 +27,7 @@ def ETL():
         joined_lower(resources=table_name),
         set_type('bbl', resources=table_name, type='string'),
         add_metadata(name=table_name, title=f'{table_name}.csv'),
-        dump_to_path(date),
+        # dump_to_path(date),
         # dump_to_sql(tables={table_name: {'resource-name': table_name}},
         #             engine='env://DATAFLOWS_DB_ENGINE')
         ).process()
@@ -38,6 +37,7 @@ if __name__ == '__main__':
     ETL()
     rm_tmp()
 
-# docker run - -name psql - p 5432: 5432 - e POSTGRES_PASSWORD = 0312 - d postgres
+# docker run - -name psql - p 5432: 5432 - e POSTGRES_PASSWORD = 1234 - d postgres
 # docker run --rm -it\
-#   -v `pwd`:/pipelines/db-facilities dpp bash
+#   -v `pwd`:/home/db-data-recipes\
+#   -w /home/db-data-recipes dpp bash

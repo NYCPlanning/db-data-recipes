@@ -19,7 +19,7 @@ def ETL():
         load(url, name=table_name, format='csv', force_strings=False),
         joined_lower(resources=table_name),
         add_metadata(name=date, title=f'{table_name}.csv'),
-        dump_to_path(date),
+        # dump_to_path(date),
         # dump_to_sql(tables={table_name: {'resource-name': table_name}},
         #             engine='env://DATAFLOWS_DB_ENGINE')
         ).process()

@@ -1,10 +1,4 @@
-import sys
-sys.path.append('../')
-sys.path.append('../..')
-import os
-
 import datetime
-
 from dataflows import *
 from tools.rename_field import rename_field
 from tools.joined_lower import joined_lower
@@ -12,6 +6,7 @@ import zipfile
 import requests
 import shutil
 import io
+import os
 
 def unzip():
     url = 'https://nycopendata.socrata.com/api/views/fum3-ejky/files/RmDbuOaF2Ix4qRBCywjyAQoeRy55Hz8L2kQHZy8R3Mc?filename=DCP_POPS.zip'
@@ -36,7 +31,7 @@ def ETL():
         set_type('dcp_record', resources=table_name, type='string'),
         set_type('community_district', resources=table_name, type='string'),
         add_metadata(name=table_name, title=f'{table_name}.csv'),
-        dump_to_path(date),
+        # dump_to_path(date),
         # dump_to_sql(tables={table_name: {'resource-name': table_name}},
         #             engine='env://DATAFLOWS_DB_ENGINE')
         ).process()

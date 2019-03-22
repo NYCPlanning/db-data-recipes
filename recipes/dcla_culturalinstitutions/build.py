@@ -24,4 +24,4 @@ if __name__ == '__main__':
     ETL()
 
 # add_metadata should come last right before dumping
-# export DATAFLOWS_DB_ENGINE=postgresql://postgres:0312@localhost:5432/postgres
+# export DATAFLOWS_DB_ENGINE=postgresql://postgres:1234@localhost:5432/postgres

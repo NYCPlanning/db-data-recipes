@@ -6,8 +6,8 @@ import os
 import datetime
 
 from dataflows import *
-from tools.rename_field import rename_field
-from tools.joined_lower import joined_lower
+from lib.rename_field import rename_field
+from lib.joined_lower import joined_lower
 
 def ETL():
 
@@ -19,7 +19,7 @@ def ETL():
         load(url, name=table_name, format='csv', force_strings=False),
         joined_lower(resources=table_name),
         add_metadata(name=date, title=f'{table_name}.csv'),
-        dump_to_path(date),
+        # dump_to_path(date),
         # dump_to_sql(tables={table_name: {'resource-name': table_name}},
         #             engine='env://DATAFLOWS_DB_ENGINE')
         ).process()
