@@ -1,7 +1,7 @@
 # db-data-recipes
 
 ## Instructions
-+ run ```pip install .``` at root directory to install lib
++ run ```pip install --editable .``` at root directory to install lib
     + lib is a set of custom tools we built for dataflows and datapackage pipelines
 + run ```pip install -r requirements.txt``` for the rest of dependencies
 + if you are using docker:
