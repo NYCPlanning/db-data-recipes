@@ -1,0 +1,124 @@
+{
+  "bytes": 67967,
+  "count_of_rows": 391,
+  "hash": "2155e3bd13dce68c26d06cbd3c1d2dcf",
+  "name": "dcas_colp",
+  "profile": "data-package",
+  "resources": [
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "dcas_colp",
+      "path": "dcas_colp.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "book_id_#",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "dcp_record",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "building_address",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "building_name",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "building_location",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "year_completed",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "community_district",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "block/lot",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "public_space_1",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "ps_1_size",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "public_space_2",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "ps_2_size",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "public_space_3",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "ps_3_size",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "public_space_4",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "ps_4_size",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "public_space_5",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "ps_5_size",
+            "type": "string"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ],
+  "title": "dcas_colp.csv"
+}

@@ -1,0 +1,74 @@
+{
+  "bytes": 62305,
+  "count_of_rows": 418,
+  "hash": "bbb86a1d16e814e1119ff11a6eee72f8",
+  "name": "2019-03-21",
+  "profile": "data-package",
+  "resources": [
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "dfta_contracts",
+      "path": "dfta_contracts.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "contract_type",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "provider_id",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "program_name",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "sponsor_name",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "program_address",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "program_borough",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "program_zipcode",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "program_phone",
+            "type": "string"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ],
+  "title": "dfta_contracts.csv"
+}
