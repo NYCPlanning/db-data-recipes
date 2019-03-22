@@ -42,7 +42,7 @@ if __name__ == '__main__':
     ETL()
     rm_tmp()
 
-# docker run - -name psql - p 5432: 5432 - e POSTGRES_PASSWORD = 0312 - d postgres
+# docker run - -name psql - p 5432: 5432 - e POSTGRES_PASSWORD = 1234 - d postgres
 # docker run --rm -it\
 #   -v `pwd`:/pipelines/db-facilities dpp bash
 # docker run --rm -it -v `pwd`:/home/db-facilities dpp bash

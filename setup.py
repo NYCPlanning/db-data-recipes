@@ -8,4 +8,11 @@ setup(name='lib',
       author_email='baiyue@whatever.com',
       license='MIT',
       packages=['lib'],
-      zip_safe=False)
+      install_requires=[
+            'click'
+      ], 
+      entry_points='''
+        [console_scripts]
+        cook=lib.cli:cli
+      ''',
+      )
