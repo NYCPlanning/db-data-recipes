@@ -2,4 +2,6 @@
 .ipynb_checkpoints
 .sources
 .dpp
+.env
 *.csv
+lib/__pycache__/*

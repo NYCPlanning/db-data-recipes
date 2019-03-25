@@ -9,7 +9,8 @@ setup(name='lib',
       license='MIT',
       packages=['lib'],
       install_requires=[
-            'click'
+            'click',
+            'dataflows',
       ], 
       entry_points='''
         [console_scripts]
