@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        cook=lib.cli:cli
+      
