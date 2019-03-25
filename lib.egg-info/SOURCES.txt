@@ -5,8 +5,6 @@ lib/cli.py
 lib/joined_lower.py
 lib/open-data-loaders.py
 lib/rename_field.py
-lib/s3_dumper.py
-lib/switch_wrapper.py
 lib.egg-info/PKG-INFO
 lib.egg-info/SOURCES.txt
 lib.egg-info/dependency_links.txt
