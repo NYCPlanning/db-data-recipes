@@ -4,4 +4,5 @@
 .dpp
 .env
 *.csv
-lib/__pycache__/*
+lib/__pycache__/
+lib.egg-info/

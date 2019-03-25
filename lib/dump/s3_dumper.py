@@ -16,18 +16,6 @@ def generate_path(file_path, base_path='', datapackage={}):
 
 class S3Dumper(FileDumper):
 
-    # def initialize(self, params):
-    #     super(S3Dumper, self).initialize(params)
-    #     self.bucket = params['bucket']
-    #     self.acl = params.get('acl', 'public-read')
-    #     self.endpoint_url = (params.get('endpoint_url') or
-    #                          os.environ.get('S3_ENDPOINT_URL') or
-    #                          'https://s3.amazonaws.com')
-    #     self.client = boto3.client('s3', endpoint_url=self.endpoint_url)
-    #     self.base_path = params.get('path', '')
-    #     self.content_type = params.get('content_type')
-    #     self.add_filehash_to_path = params.get('add-filehash-to-path')
-
     def __init__(self, params, **options):
         super(S3Dumper, self).__init__(options)
         self.bucket = params['bucket']
