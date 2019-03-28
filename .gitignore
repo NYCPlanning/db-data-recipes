@@ -6,3 +6,4 @@
 *.csv
 lib/__pycache__/
 lib.egg-info/
+docker_sh.sh

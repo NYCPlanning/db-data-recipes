@@ -1,0 +1,107 @@
+{
+  "bytes": 18096,
+  "count_of_rows": 78,
+  "hash": "f8672e11404aeeb01c2d528e524d64cf",
+  "profile": "data-package",
+  "resources": [
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "hhc_hospitals",
+      "path": "hhc_hospitals.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "facility_type",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "borough",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "facility_name",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "cross_streets",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "phone",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "location_1",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "postcode",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "latitude",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "longitude",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "community_board",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "council_district",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "census_tract",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "bin",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "bbl",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "nta",
+            "type": "string"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ]
+}

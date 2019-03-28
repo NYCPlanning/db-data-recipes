@@ -5,18 +5,30 @@ import os
 def cli():
     pass
 
+@cli.group()
+def recipe():
+    pass
 
-@cli.command('ls')
-@click.argument('stuff', type=str)
-def list_stuff(stuff):
-    if stuff == 'pipe': 
-        click.echo(os.system('dpp'))
-    elif stuff == 'datasets': 
-        click.echo(os.system('ls ./recipes/'))
+@recipe.command('ls')
+def list_recipes():
+    for i in os.listdir('./recipes/'):
+        click.echo(i)
 
-@cli.command('update')
-@click.argument('dataset', type=str)
-@click.option('--dumptopath', default='no', help='yes or no')
-def update(dataset, dumptopath): 
-    os.system(f'python ./recipes/{dataset}/build.py')
-    click.echo(f'{dataset} update complete')
+
+# def get_recipes(ctx, args, incomplete):
+#     return [k for k in os.listdir('./recipes/') if incomplete in k]
+
+# @recipe.command('run')
+# @click.argument('recipe', type=click.STRING, autocompletion=get_recipes)
+# def run_recipes(recipe):
+#     os.system(f'python ./recipes/{recipe}/build.py')
+
+
+
+# def get_recipes(ctx, args, incomplete):
+#     return [k for k in os.listdir('./recipes/') if incomplete in k]
+
+@recipe.command('run')
+@click.argument('recipe')
+def run_recipes(recipe):
+    os.system(f'python ./recipes/{recipe}/build.py')

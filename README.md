@@ -12,6 +12,9 @@
         sptkl/docker-dataloading bash
     ```
     run at root directory
++ setting up environmental variables: 
+    + create `.env` in the format of `.example.env`
+    + 
 
 + About dump_to_s3
   + adapted from datapackage-piplines-aws

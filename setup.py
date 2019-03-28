@@ -11,6 +11,7 @@ setup(name='lib',
       install_requires=[
             'click',
             'dataflows',
+            'python-dotenv'
       ], 
       entry_points='''
         [console_scripts]

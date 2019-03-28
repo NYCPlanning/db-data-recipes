@@ -1,0 +1,106 @@
+{
+  "bytes": 7461796,
+  "count_of_rows": 42269,
+  "hash": "a600920b074745c35ae7583e6ded1b04",
+  "profile": "data-package",
+  "resources": [
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "doe_busroutesgarages",
+      "path": "doe_busroutesgarages.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "school_year",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "route_number",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "service_type",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "vehicle_typedescription",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "route_start_date",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "vendor_code",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "vendor_name",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "vendor_affiliation",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "garage__street_address",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "garage_city",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "garage_state",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "garage_zip",
+            "type": "integer"
+          },
+          {
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "xcoordinates",
+            "type": "number"
+          },
+          {
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "ycoordinates",
+            "type": "number"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ]
+}

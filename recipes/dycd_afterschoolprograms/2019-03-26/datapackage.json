@@ -1,0 +1,117 @@
+{
+  "bytes": 444664,
+  "count_of_rows": 1599,
+  "hash": "09555d742bdbaaba614648a70a15bd44",
+  "profile": "data-package",
+  "resources": [
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "dycd_afterschoolprograms",
+      "path": "dycd_afterschoolprograms.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "program_type",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "program",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "site_name",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "borough_/_community",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "agency",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "contact_number",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "grade_level_/_age_group",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "location_1",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "postcode",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "latitude",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "longitude",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "community_board",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "council_district",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "census_tract",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "bin",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "bbl",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "nta",
+            "type": "string"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ]
+}

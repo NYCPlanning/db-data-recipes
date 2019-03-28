@@ -2,6 +2,7 @@ README.md
 setup.py
 lib/__init__.py
 lib/cli.py
+lib/dump_2_postgis.py
 lib/joined_lower.py
 lib/open-data-loaders.py
 lib/rename_field.py

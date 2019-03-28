@@ -1,0 +1,69 @@
+{
+  "bytes": 347692,
+  "count_of_rows": 2124,
+  "hash": "4dc3bfc4d8bb4b1314cd241960bdd3b7",
+  "name": "bic_tradewaste",
+  "profile": "data-package",
+  "resources": [
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "bic_tradewaste",
+      "path": "bic_tradewaste.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "type",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "bus_name",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "mailing_office",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "mail_city",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "mstat",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "comp_phone",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "location_1",
+            "type": "string"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ],
+  "title": "bic_tradewaste.csv"
+}

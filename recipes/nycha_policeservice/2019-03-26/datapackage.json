@@ -1,0 +1,57 @@
+{
+  "bytes": 1803,
+  "count_of_rows": 16,
+  "hash": "8633b095f2b2f9a8c02857c38445b585",
+  "profile": "data-package",
+  "resources": [
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "nycha_policeservice",
+      "path": "nycha_policeservice.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "psa",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "the_geom",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "borough",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "address",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "zipcode",
+            "type": "integer"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ]
+}

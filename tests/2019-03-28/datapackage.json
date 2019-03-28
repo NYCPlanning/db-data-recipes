@@ -1,0 +1,214 @@
+{
+  "bytes": 6609258,
+  "count_of_rows": 2010,
+  "hash": "7d7a751e5042f41a18b2c06586bb46f2",
+  "profile": "data-package",
+  "resources": [
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "dpr_parksproperties",
+      "path": "dpr_parksproperties.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "OBJECTID",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "OMPPROPID",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "GISPROPNUM",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "the_geom",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "DEPARTMENT",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PERMITDIST",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PERMITPARE",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PARENTID",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "LOCATION",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "COMMUNITYB",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "COUNCILDIS",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PRECINCT",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "ZIPCODE",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "BOROUGH",
+            "type": "string"
+          },
+          {
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "ACRES",
+            "type": "number"
+          },
+          {
+            "format": "default",
+            "name": "RETIRED",
+            "type": "boolean"
+          },
+          {
+            "format": "default",
+            "name": "EAPPLY",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PIP_RATABL",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "GISOBJID",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "CLASS",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "COMMISSION",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "ACQUISITIO",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "ADDRESS",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "JURISDICTI",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "MAPPED",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "NAME311",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "PERMIT",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "SIGNNAME",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "SUBCATEGOR",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "TYPECATEGO",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "URL",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "WATERFRONT",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "NYS_ASSEMB",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "NYS_SENATE",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "US_CONGRES",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "GlobalID",
+            "type": "string"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ]
+}

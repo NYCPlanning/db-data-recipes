@@ -1,0 +1,131 @@
+{
+  "bytes": 17174,
+  "count_of_rows": 41,
+  "hash": "687fd88721dc530765579897b0cca539",
+  "profile": "data-package",
+  "resources": [
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "sbs_workforce1",
+      "path": "sbs_workforce1.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "hours",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "number",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "street",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "street_address_2",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "city",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "borough",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "state",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "postcode",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "details",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "location_type",
+            "type": "string"
+          },
+          {
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "latitude",
+            "type": "number"
+          },
+          {
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "longitude",
+            "type": "number"
+          },
+          {
+            "format": "default",
+            "name": "bin",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "bbl",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "nta",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "council_district",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "census_tract",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "community_board",
+            "type": "string"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ]
+}
