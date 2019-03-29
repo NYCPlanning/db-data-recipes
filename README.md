@@ -30,7 +30,15 @@
     + `path` --> file path
     + `add_filehash_to_path` --> `True` or `False` to prepend hash to path
 
-
++ Dump to postgis: 
+    + e.g. 
+    ```
+     dump_to_postgis(resources=table_name, 
+                        engine='postgresql://postgres:0312@localhost:5432/postgres',
+                        drcSRS='EPSG:4326',
+                        srcSRS='EPSG:4326',
+                        )
+    ```
 ## Docker environment
 + ```docker pull sptkl/docker-dataloading``` to get development environment
 + dockerfile is maintained [here](https://github.com/SPTKL/docker-dataloading)

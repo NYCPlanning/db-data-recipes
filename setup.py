@@ -11,10 +11,12 @@ setup(name='lib',
       install_requires=[
             'click',
             'dataflows',
-            'python-dotenv'
+            'python-dotenv', 
+            'gdal'
       ], 
       entry_points='''
         [console_scripts]
         cook=lib.cli:cli
       ''',
+      scripts=['.env', 'settings.sh']
       )

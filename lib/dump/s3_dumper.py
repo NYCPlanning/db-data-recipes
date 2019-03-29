@@ -4,16 +4,6 @@ import boto3
 import mimetypes
 from dataflows.processors.dumpers.file_dumper import FileDumper
 
-def generate_path(file_path, base_path='', datapackage={}):
-    # format_params = {'version': 'latest'}
-    # format_params.update(datapackage)
-    # try:
-    #     base_path = base_path.format(**format_params)
-    # except KeyError:
-    #     logging.exception('datapackage.json is missing a property')
-    #     raise
-    return os.path.join(base_path, file_path)
-
 class S3Dumper(FileDumper):
 
     def __init__(self, params, **options):
@@ -24,7 +14,7 @@ class S3Dumper(FileDumper):
                              os.environ.get('S3_ENDPOINT_URL') or
                              'https://s3.amazonaws.com')
         self.client = boto3.client('s3', endpoint_url=self.endpoint_url)
-        self.base_path = params.get('path', '')
+        self.base_path = params.get('base_path', '')
         self.content_type = params.get('content_type')
         self.add_filehash_to_path = params.get('add-filehash-to-path')
 
@@ -34,7 +24,7 @@ class S3Dumper(FileDumper):
         return datapackage
 
     def write_file_to_output(self, filename, path, allow_create_bucket=True):
-        key = generate_path(path, self.base_path, self.datapackage)
+        key = os.path.join(self.base_path, path.replace('./',''))
         content_type, _ = mimetypes.guess_type(key)
         try:
             objs = self.client.list_objects_v2(Bucket=self.bucket, Prefix=key)
