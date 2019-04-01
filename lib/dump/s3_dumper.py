@@ -24,7 +24,7 @@ class S3Dumper(FileDumper):
         return datapackage
 
     def write_file_to_output(self, filename, path, allow_create_bucket=True):
-        key = os.path.join(self.base_path, path.replace('./',''))
+        key = os.path.join(self.base_path, path.replace('./','')) #temporary fix
         content_type, _ = mimetypes.guess_type(key)
         try:
             objs = self.client.list_objects_v2(Bucket=self.bucket, Prefix=key)

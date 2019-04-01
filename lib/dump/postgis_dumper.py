@@ -1,42 +1,67 @@
-from dataflows.helpers.resource_matcher import ResourceMatcher
+import os
+import logging
+import mimetypes
 from lib.parse_engine import parse_engine
 from osgeo import ogr
 from osgeo import gdal
+from pathlib import Path
+import tempfile
+from dataflows.processors.dumpers.file_dumper import FileDumper
 
-def postgis_dumper(resources=None, **options):
-    
-    def func(package):
-        matcher = ResourceMatcher(resources, package.pkg)
-        for resource in package.pkg.descriptor['resources']:
-            if matcher.match(resource['name']):
-                name = resource['name']
-                file_path = resource['path']
-                dump_helper(name, file_path, options)
-        yield package.pkg
+class PostgisDumper(FileDumper):
+    def __init__(self,
+                 resources=None,
+                 db_table_name=None,
+                 srcSRS='EPSG:4326', 
+                 dstSRS='EPSG:4326',
+                 engine='env://DATAFLOWS_DB_ENGINE',
+                 **options):
+
+        super(PostgisDumper, self).__init__(options)
+        if engine.startswith('env://'):
+            env_var = engine[6:]
+            engine = os.environ.get(env_var)
+            if engine is None:
+                raise ValueError("Couldn't connect to DB - "
+                                 "Please set your '%s' environment variable" % env_var)
+
+        self.engine = parse_engine(engine)
+        self.db_table_name = db_table_name
+        self.srcSRS = srcSRS
+        self.dstSRS = dstSRS
         
-        for res in package:
-            yield res
+    def process_resource(self, resource):
+        if resource.res.name in self.file_formatters:
+            schema = resource.res.schema
 
-    return func
+            temp_file = tempfile.NamedTemporaryFile(mode="w+", suffix='.csv', delete=False, newline='')
+            writer_kwargs = {'use_titles': True} if self.use_titles else {}
+            writer = self.file_formatters[resource.res.name](temp_file, schema, **writer_kwargs)
 
+            return self.rows_processor(resource,
+                                       writer,
+                                       temp_file)
+        else:
+            return resource
 
-def dump_helper(name, path, options):
-    engine = parse_engine(options.get('engine', ''))
-    host = engine.get('host')
-    port = engine.get('port')
-    user = engine.get('user')
-    dbname = engine.get('database')
+    def write_file_to_output(self, filename, path):
+        if Path(path).suffix == '.csv':
+            PostgisDumper.put_object(self.db_table_name,
+                                    self.srcSRS, self.dstSRS,
+                                    filename, path, self.engine)
+        else: #ignore datapacakge.json when dumping to postgis
+            pass
 
-    dstDS = gdal.OpenEx(f'PG:host={host} port={port} user={user} dbname={dbname}', gdal.OF_VECTOR)
-    srcDS = gdal.OpenEx(path, open_options=['AUTODETECT_TYPE=YES', 'GEOM_POSSIBLE_NAMES=the_geom'])
-    DstSRS = options.get('drcSRS')
-    SrcSRS = options.get('srcSRS')
+    @staticmethod
+    def put_object(db_table_name, srcSRS, dstSRS, filename, path, engine):
+        dstDS = gdal.OpenEx(engine, gdal.OF_VECTOR)
+        srcDS = gdal.OpenEx(filename, open_options=['AUTODETECT_TYPE=YES', 'GEOM_POSSIBLE_NAMES=the_geom'])
 
-    gdal.VectorTranslate(
-        dstDS,
-        srcDS,
-        format='PostgreSQL',
-        dstSRS=DstSRS,
-        srcSRS=SrcSRS,
-        layerName=name,
-        accessMode='overwrite')
+        gdal.VectorTranslate(
+            dstDS,
+            srcDS,
+            format='PostgreSQL',
+            dstSRS=dstSRS,
+            srcSRS=srcSRS,
+            layerName=db_table_name,
+            accessMode='overwrite')
