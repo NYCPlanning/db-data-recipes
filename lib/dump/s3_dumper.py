@@ -2,6 +2,7 @@ import os
 import logging
 import boto3
 import mimetypes
+import hashlib
 from dataflows.processors.dumpers.file_dumper import FileDumper
 
 class S3Dumper(FileDumper):
@@ -10,11 +11,14 @@ class S3Dumper(FileDumper):
         super(S3Dumper, self).__init__(options)
         self.bucket = params['bucket']
         self.acl = params.get('acl', 'public-read')
+
         self.endpoint_url = (params.get('endpoint_url') or
                              os.environ.get('S3_ENDPOINT_URL') or
                              'https://s3.amazonaws.com')
+
         self.client = boto3.client('s3', endpoint_url=self.endpoint_url)
         self.base_path = params.get('base_path', '')
+
         self.content_type = params.get('content_type')
         self.add_filehash_to_path = params.get('add-filehash-to-path')
 
@@ -24,29 +28,34 @@ class S3Dumper(FileDumper):
         return datapackage
 
     def write_file_to_output(self, filename, path, allow_create_bucket=True):
-        key = os.path.join(self.base_path, path.replace('./','')) #temporary fix
+        key = os.path.join(self.base_path, path.replace('./',''))
         content_type, _ = mimetypes.guess_type(key)
-        try:
-            objs = self.client.list_objects_v2(Bucket=self.bucket, Prefix=key)
-            if (not path.endswith('datapackage.json')) and \
-                    objs.get('KeyCount') and \
-                    self.add_filehash_to_path:
-                logging.warning(
-                    'Skipping upload of file %s as it already exists', path)
-                return
-            self.put_object(
-                ACL=self.acl,
-                Body=open(filename, 'rb'),
-                Bucket=self.bucket,
-                ContentType=self.content_type or content_type or 'text/plain',
-                Key=key)
-            return os.path.join(self.endpoint_url, self.bucket, key)
+        md5 = S3Dumper.md5_checksum(filename)
+
+        try: #check for repetition
+            contents = self.client\
+                       .list_objects_v2(Bucket=self.bucket, Prefix=self.base_path)\
+                       .get('Contents')
+            
+            etags = [i.get('ETag').replace('"', '') for i in contents]
+            if md5 in etags: 
+                print(f'{key} is already the lastest')
+            else: 
+                self.put_object(
+                    ACL=self.acl,
+                    Body=open(filename, 'rb'),
+                    Bucket=self.bucket,
+                    ContentType=self.content_type or content_type or 'text/plain',
+                    Key=key)
+
         except self.client.exceptions.NoSuchBucket:
+
             if os.environ.get("S3_ENDPOINT_URL") and allow_create_bucket:
                 # if you provided a custom endpoint url, we assume you are
                 # using an s3 compatible server, in this case, creating a
                 # bucket should be cheap and easy, so we can do it here
                 self.client.create_bucket(Bucket=self.bucket)
+
                 return self.write_file_to_output(filename, path,
                                                  allow_create_bucket=False)
             else:
@@ -54,4 +63,11 @@ class S3Dumper(FileDumper):
 
     def put_object(self, **kwargs):
         return self.client.put_object(**kwargs)
-
+    
+    @staticmethod
+    def md5_checksum(filename):
+        checksum = hashlib.md5()
+        with open(filename, 'rb') as f:
+            for chunk in iter(lambda: f.read(8192), b''):
+                checksum.update(chunk)
+        return checksum.hexdigest()

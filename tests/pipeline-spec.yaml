@@ -1,0 +1,7 @@
+my-flow:
+  pipeline:
+  - run: load_resource
+    parameters:
+      url: https://sptkl.sfo2.digitaloceanspaces.com/nycha_policeservice/2019-04-01/datapackage.json
+      resource: nycha_policeservice
+  - run: dump_to_path
