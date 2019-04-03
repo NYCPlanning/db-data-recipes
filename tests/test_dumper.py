@@ -31,7 +31,7 @@ def test_dump_to_postgis():
 
 def test_dump_to_s3():
     from dataflows import Flow, load, update_resource
-    from lib import dump_to_s3, get_resource, create_csv_path, create_s3_path
+    from lib import dump_to_s3, get_resource, create_csv_path
     from pathlib import Path
 
     client = make_client()

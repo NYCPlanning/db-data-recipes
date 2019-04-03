@@ -2,9 +2,8 @@
 .ipynb_checkpoints
 .sources
 .dpp
-.env
 .pytest_cache
 *.csv
 *.egg-info/
 *__pycache__/
-docker_sh.sh
+settings.sh
