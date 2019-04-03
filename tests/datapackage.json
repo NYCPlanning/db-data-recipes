@@ -1,0 +1,63 @@
+{
+  "bytes": 1803,
+  "count_of_rows": 16,
+  "hash": "10f810e498bc04e80cf40d804e8b054b",
+  "name": "_",
+  "profile": "data-package",
+  "resources": [
+    {
+      "bytes": 1803,
+      "count_of_rows": 16,
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "https://sptkl.sfo2.digitaloceanspaces.com/nycha_policeservice/2019-04-01/nycha_policeservice.csv",
+      "dpp:streaming": true,
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "9bce2fe3b5963c6c2512b2d7a1a3cb97",
+      "mediatype": "text/csv",
+      "name": "nycha_policeservice",
+      "path": "nycha_policeservice.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "PSA",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "the_geom",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "BOROUGH",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "ADDRESS",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "ZIPCODE",
+            "type": "integer"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ]
+}

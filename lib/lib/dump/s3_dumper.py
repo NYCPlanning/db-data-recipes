@@ -3,6 +3,7 @@ import logging
 import boto3
 import mimetypes
 import hashlib
+from pathlib import Path
 from dataflows.processors.dumpers.file_dumper import FileDumper
 
 class S3Dumper(FileDumper):
@@ -34,10 +35,14 @@ class S3Dumper(FileDumper):
 
         try: #check for repetition
             contents = self.client\
-                       .list_objects_v2(Bucket=self.bucket, Prefix=self.base_path)\
+                       .list_objects_v2(Bucket=self.bucket, Prefix=str(Path(self.base_path).parent))\
                        .get('Contents')
             
-            etags = [i.get('ETag').replace('"', '') for i in contents]
+            if contents:
+                etags = [i.get('ETag').replace('"', '') for i in contents]
+            else: 
+                etags = []
+
             if md5 in etags: 
                 print(f'{key} is already the lastest')
             else: 

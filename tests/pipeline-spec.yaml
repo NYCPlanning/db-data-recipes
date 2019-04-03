@@ -4,4 +4,7 @@ my-flow:
     parameters:
       url: https://sptkl.sfo2.digitaloceanspaces.com/nycha_policeservice/2019-04-01/datapackage.json
       resource: nycha_policeservice
-  - run: dump_to_path
+  - run: lib.dump_to_postgis
+    parameters: 
+      resource: nycha_policeservice
+      db_table_name: nycha_policeservice
