@@ -10,8 +10,6 @@ setup(name='lib',
       packages=['lib'],
       install_requires=[
             'click',
-            'dataflows',
-            'datapackage_pipelines',
             'python-dotenv', 
             'gdal',
             'psycopg2-binary',
