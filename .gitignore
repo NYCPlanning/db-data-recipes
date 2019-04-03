@@ -4,6 +4,7 @@
 .dpp
 .pytest_cache
 *.csv
+*.DS_Store
 *.egg-info/
 *__pycache__/
 settings.sh
