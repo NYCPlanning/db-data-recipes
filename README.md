@@ -70,6 +70,12 @@
     + for some reason, datapacakge pipelines would only find custom pipeline plugins if they are named following `datapackage_pipelines_<plugin>` format. 
     + also the custom processor has to be placed under the `processor` folder. 
 
+## Cli instructions
++ `cook recipe ls all` would show you all the recipes in s3
++ `cook recipe ls <recipe>` would show you all the versions of that recipe in s3
++ `cook recipe run <recupe>` would run the `./recipe/<recipe>/build.py` file 
+
+
 ## Docker environment
 + ```docker pull sptkl/docker-dataloading``` to get dataloading development environment
 + ```docker pull mdillon/postgis``` to get postgres database with postgis extension enabled

@@ -10,7 +10,7 @@ class S3Dumper(FileDumper):
 
     def __init__(self, params, **options):
         super(S3Dumper, self).__init__(options)
-        self.bucket = params['bucket']
+        self.bucket = params.get('bucket', os.environ.get('BUCKET'))
         self.acl = params.get('acl', 'public-read')
 
         self.endpoint_url = (params.get('endpoint_url') or

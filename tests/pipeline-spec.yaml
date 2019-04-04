@@ -1,9 +1,13 @@
 my-flow:
   pipeline:
-  - run: load_resource
+  - run: lib.load_resource
     parameters:
-      url: https://sptkl.sfo2.digitaloceanspaces.com/nycha_policeservice/2019-04-01/datapackage.json
-      resource: nycha_policeservice
+      # recipe: nycha_policeservice:2019-04-03
+      recipe: nycha_policeservice:latest
+  # - run: load_resource
+  #   parameters:
+  #     url: https://sptkl.sfo2.digitaloceanspaces.com/nycha_policeservice/2019-04-04/datapackage.json
+  #     resource: nycha_policeservice
   - run: lib.dump_to_postgis
     parameters: 
       resource: nycha_policeservice
