@@ -1,7 +1,7 @@
 from dataflows import *
 from lib.rename_field import rename_field
-from lib.joined_lower import joined_lower
-import datetime
+from lib import joined_lower, create_csv_path
+from lib import dump_to_s3
 import zipfile
 import requests
 import shutil
@@ -19,25 +19,17 @@ def rm_tmp():
 def ETL():
 
     table_name = 'dcas_colp'
-    date = datetime.date.today().isoformat()
+    base_path = create_csv_path(table_name)
 
     Flow(
         load('tmp/COLP_2018.xlsx', name=table_name, format='xlsx', sheet=1),
         rename_field('MAPPABLE (1=NOT MAPPED)', 'MAPPABLE'),
         joined_lower(resources=table_name),
-        set_type('bbl', resources=table_name, type='string'),
-        add_metadata(name=table_name, title=f'{table_name}.csv'),
-        # dump_to_path(date),
-        # dump_to_sql(tables={table_name: {'resource-name': table_name}},
-        #             engine='env://DATAFLOWS_DB_ENGINE')
+        set_type('bbl', resources=table_name, type='string'),   
+        dump_to_s3(resources=table_name, params=dict(base_path=base_path))
         ).process()
 
 if __name__ == '__main__':
     unzip()
     ETL()
     rm_tmp()
-
-# docker run - -name psql - p 5432: 5432 - e POSTGRES_PASSWORD = 1234 - d postgres
-# docker run --rm -it\
-#   -v `pwd`:/home/db-data-recipes\
-#   -w /home/db-data-recipes dpp bash

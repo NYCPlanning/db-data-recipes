@@ -1,27 +1,17 @@
-import sys
-sys.path.append('..')
-sys.path.append('../..')
-
-
-import datetime
-from dataflows import *
-from tools.joined_lower import joined_lower
+from dataflows import Flow, load
+from lib import dump_to_s3, get_resource, create_csv_path, joined_lower
+import os
 
 def ETL():
     table_name = 'dcla_culturalinstitutions'
     url = 'https://data.cityofnewyork.us/api/views/u35m-9t32/rows.csv?accessType=DOWNLOAD'
-    date = datetime.date.today().isoformat()
+    base_path = create_csv_path(table_name)
+
     Flow(
-        load(url, name=table_name, format='csv', validate=True),
+        load(url, name=table_name, format='csv', force_strings=False),
         joined_lower(resources=table_name),
-        add_metadata(name=table_name, title=f'{table_name}.csv'),
-        dump_to_path(f'{date}'),
-        dump_to_sql(tables={table_name: {'resource-name': table_name}},
-                    engine='env://DATAFLOWS_DB_ENGINE')
+        dump_to_s3(resources=table_name, params=dict(base_path=base_path))
     ).process()
 
 if __name__ == '__main__':
     ETL()
-
-# add_metadata should come last right before dumping
-# export DATAFLOWS_DB_ENGINE=postgresql://postgres:1234@localhost:5432/postgres

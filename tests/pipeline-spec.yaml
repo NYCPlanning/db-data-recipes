@@ -1,8 +1,8 @@
-my-flow:
+test-pipeline:
   pipeline:
   - run: lib.load_resource
     parameters:
-      # recipe: nycha_policeservice:2019-04-03
+      # recipe: nycha_policeservice:2019-04-04
       recipe: nycha_policeservice:latest
   # - run: load_resource
   #   parameters:
@@ -12,3 +12,4 @@ my-flow:
     parameters: 
       resource: nycha_policeservice
       db_table_name: nycha_policeservice
+  - run: dump_to_path 

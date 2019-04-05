@@ -107,10 +107,10 @@ class ResourceLoader(object):
         
         try: 
             if version == 'latest':
-                dpkg = list(filter(lambda x: Path(x).suffix == 'json', versions))[0]
+                dpkg = list(filter(lambda x: Path(x).parts[2] == 'datapackage.json', versions))[0]
             else: 
                 dpkg = list(filter(lambda x: (Path(x).parts[1] == version)\
-                     and (Path(x).parts[2] == 'datapackage.json'), versions))[0]
+                        and (Path(x).parts[2] == 'datapackage.json'), versions))[0]
             url = os.path.join(os.environ.get('S3_ENDPOINT_URL'),\
                             bucket, dpkg)
             return dict(resource=resource, url=url)
