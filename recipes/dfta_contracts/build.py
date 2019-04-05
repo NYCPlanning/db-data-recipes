@@ -1,6 +1,5 @@
 from dataflows import *
 from lib import joined_lower, create_csv_path
-import datetime
 import os
 from lib import dump_to_s3
 

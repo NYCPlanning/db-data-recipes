@@ -1,0 +1,39 @@
+db-facilities: 
+  title: facilities database
+  description: city owned facilities
+  dependencies: 
+    - pipeline: ./recipes/doe_universalprek/doe_universalprek
+    - pipeline: ./recipes/bic_tradewaste/bic_tradewaste
+    - pipeline: ./recipes/dpr_parksproperties/dpr_parksproperties
+  pipeline:
+    # doe_universalprek
+    - run: lib.load_resource
+      parameters:
+        recipe: doe_universalprek:latest
+    - run: lib.dump_to_postgis
+      parameters: 
+        resource: doe_universalprek
+        db_table_name: doe_universalprek
+
+    # bic_tradewaste
+    - run: lib.load_resource
+      parameters:
+        recipe: bic_tradewaste:latest
+    - run: lib.dump_to_postgis
+      parameters: 
+        resource: bic_tradewaste
+        db_table_name: bic_tradewaste
+
+    # dpr_parksproperties
+    - run: lib.load_resource
+      parameters:
+        recipe: dpr_parksproperties:latest
+    - run: lib.dump_to_postgis
+      parameters: 
+        resource: dpr_parksproperties
+        db_table_name: dpr_parksproperties
+    
+    # final dumping
+    - run: dump_to_path
+      parameters: 
+        out-path: data

@@ -1,0 +1,9 @@
+doe_universalprek:
+  pipeline:
+  - run: lib.load_resource
+    parameters:
+      recipe: doe_universalprek:latest
+  - run: lib.dump_to_postgis
+    parameters: 
+      resource: doe_universalprek
+      db_table_name: doe_universalprek

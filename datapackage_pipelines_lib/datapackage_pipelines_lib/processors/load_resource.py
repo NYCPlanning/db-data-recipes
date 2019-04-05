@@ -12,6 +12,9 @@ from datapackage_pipelines.utilities.resources import tabular, PROP_STREAMING, \
 from pathlib import Path
 import os
 from lib.s3.make_client import make_client
+import sys
+import csv
+csv.field_size_limit(sys.maxsize)
 
 def progress_logger(iter, log_progress_rows):
     for i, row in enumerate(iter, 1):

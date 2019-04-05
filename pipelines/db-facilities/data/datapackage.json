@@ -1,0 +1,441 @@
+{
+  "bytes": 7425882,
+  "count_of_rows": 6020,
+  "hash": "e30cf5c7c68a723da2deefe33c6a9d76",
+  "name": "_",
+  "profile": "data-package",
+  "resources": [
+    {
+      "bytes": 469438,
+      "count_of_rows": 1885,
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "https://sfo2.digitaloceanspaces.com/sptkl/doe_universalprek/2019-04-05/doe_universalprek.csv",
+      "dpp:streaming": true,
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "e09c94ed2eb50341084aba0ab350d7fb",
+      "mediatype": "text/csv",
+      "name": "doe_universalprek",
+      "path": "doe_universalprek.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "loccode",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "prek_type",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "borough",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "locname",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "note",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "phone",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "address",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "postcode",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "day_length",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "seats",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "x",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "y",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "email",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "website",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "meals",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "indoor_outdoor",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "extended_day",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "sems_code",
+            "type": "string"
+          },
+          {
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "latitude",
+            "type": "number"
+          },
+          {
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "longitude",
+            "type": "number"
+          },
+          {
+            "format": "default",
+            "name": "community_board",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "council_district",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "census_tract",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "bin",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "bbl",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "nta",
+            "type": "string"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    },
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "https://sfo2.digitaloceanspaces.com/sptkl/bic_tradewaste/2019-04-04/bic_tradewaste.csv",
+      "dpp:streaming": true,
+      "encoding": "utf-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "bic_tradewaste",
+      "path": "bic_tradewaste.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "type",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "bus_name",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "mailing_office",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "mail_city",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "mstat",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "comp_phone",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "location_1",
+            "type": "string"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    },
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "https://sfo2.digitaloceanspaces.com/sptkl/dpr_parksproperties/2019-04-05/dpr_parksproperties.csv",
+      "dpp:streaming": true,
+      "encoding": "utf-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "dpr_parksproperties",
+      "path": "dpr_parksproperties.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "gispropnum",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "objectid",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "the_geom",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "omppropid",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "department",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "permitdist",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "permitpare",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "parentid",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "location",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "communityb",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "councildis",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "precinct",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "zipcode",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "borough",
+            "type": "string"
+          },
+          {
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "acres",
+            "type": "number"
+          },
+          {
+            "format": "default",
+            "name": "retired",
+            "type": "boolean"
+          },
+          {
+            "format": "default",
+            "name": "eapply",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "pip_ratabl",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "gisobjid",
+            "type": "integer"
+          },
+          {
+            "format": "default",
+            "name": "class",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "commission",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "acquisitio",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "address",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "jurisdicti",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "mapped",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "permit",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "name311",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "signname",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "subcategor",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "typecatego",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "waterfront",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "url",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "nys_assemb",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "nys_senate",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "us_congres",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "globalid",
+            "type": "string"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ]
+}
