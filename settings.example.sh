@@ -1,9 +1,4 @@
 #!/bin/bash
-
-## settings for cli
-echo ". cook-complete.sh" >  ~/.bashrc 
-source ~/.bashrc
-
 ## environmental variables settings
 export AWS_ACCESS_KEY_ID='XXXXXXXXXXXXXXX'
 export AWS_SECRET_ACCESS_KEY='XXXXXXXXXXX'
@@ -15,3 +10,6 @@ export BUCKET='BUCKETXXXXXXXXXXXXXXXXXXXX'
 ## install custom python pacakges
 pip install -e lib/
 pip install -e datapackage_pipelines_lib/
+
+## settings for cli
+eval "$(_COOK_COMPLETE=source cook)"
