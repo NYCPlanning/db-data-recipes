@@ -1,7 +1,5 @@
 from dataflows import *
-from lib.rename_field import rename_field
-from lib import joined_lower, create_csv_path
-from lib import dump_to_s3
+from lib import joined_lower, create_base_path, dump_to_s3, rename_field, joined_lower
 import zipfile
 import requests
 import shutil
@@ -19,7 +17,7 @@ def rm_tmp():
 def ETL():
 
     table_name = 'dcas_colp'
-    base_path = create_csv_path(table_name)
+    base_path = create_base_path(__file__)
 
     Flow(
         load('tmp/COLP_2018.xlsx', name=table_name, format='xlsx', sheet=1),

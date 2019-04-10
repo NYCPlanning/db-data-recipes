@@ -10,7 +10,7 @@ from dataflows.processors.dumpers.file_dumper import FileDumper
 
 class PostgisDumper(FileDumper):
     def __init__(self,
-                 resources=None,
+                 resource=None,
                  db_table_name=None,
                  srcSRS='EPSG:4326', 
                  dstSRS='EPSG:4326',
@@ -46,14 +46,15 @@ class PostgisDumper(FileDumper):
 
     def write_file_to_output(self, filename, path):
         if Path(path).suffix == '.csv':
-            PostgisDumper.put_object(self.db_table_name,
+            table_name = Path(path).stem if self.db_table_name is None else self.db_table_name
+            PostgisDumper.put_object(table_name,
                                     self.srcSRS, self.dstSRS,
-                                    filename, path, self.engine)
+                                    filename, self.engine)
         else: #ignore datapacakge.json when dumping to postgis
             pass
 
     @staticmethod
-    def put_object(db_table_name, srcSRS, dstSRS, filename, path, engine):
+    def put_object(db_table_name, srcSRS, dstSRS, filename, engine):
         dstDS = gdal.OpenEx(engine, gdal.OF_VECTOR)
         srcDS = gdal.OpenEx(filename, open_options=['AUTODETECT_TYPE=YES', 'GEOM_POSSIBLE_NAMES=the_geom'])
 

@@ -1,13 +1,11 @@
 from dataflows import *
-from lib import joined_lower, create_csv_path
-import os
+from lib import joined_lower, create_base_path
 from lib import dump_to_s3
 
 def ETL():
     table_name = 'dfta_contracts'
     url = 'https://data.cityofnewyork.us/api/views/6j6t-3ixh/rows.csv?accessType=DOWNLOAD'
-
-    base_path = create_csv_path(table_name)
+    base_path = create_base_path(__file__)
 
     Flow(
         load(url, name=table_name, format='csv', force_strings=False),

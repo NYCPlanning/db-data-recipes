@@ -1,9 +1,0 @@
-bic_tradewaste:
-  pipeline:
-  - run: lib.load_resource
-    parameters:
-      recipe: bic_tradewaste:latest
-  - run: lib.dump_to_postgis
-    parameters: 
-      resource: bic_tradewaste
-      db_table_name: bic_tradewaste

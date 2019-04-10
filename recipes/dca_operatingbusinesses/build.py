@@ -1,12 +1,12 @@
 from dataflows import *
-from lib import joined_lower, create_csv_path
-import os
-from lib import dump_to_s3
+from lib import joined_lower, create_base_path, dump_to_s3
+from pathlib import Path
+
 
 def ETL():
     table_name = 'dca_operatingbusinesses'
     url='https://data.cityofnewyork.us/api/views/w7w3-xahh/rows.csv?accessType=DOWNLOAD'
-    base_path = create_csv_path(table_name)
+    base_path = create_base_path(__file__)
 
     Flow(
         load(url, name=table_name, format='csv', force_strings=False),
@@ -16,5 +16,3 @@ def ETL():
     
 if __name__ == '__main__':
     ETL()
-
-# add_metadata should come last right before dumping

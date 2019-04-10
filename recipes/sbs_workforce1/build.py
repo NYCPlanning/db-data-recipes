@@ -1,22 +1,17 @@
 from dataflows import *
-from lib.joined_lower import joined_lower
-import datetime
-import os
+from lib import joined_lower, create_base_path, dump_to_s3
 
 def ETL():
-
     table_name = 'sbs_workforce1'
     url = 'https://data.cityofnewyork.us/api/views/6smc-7mk6/rows.csv?accessType=DOWNLOAD'
-    path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 
-                        datetime.date.today().isoformat())
+
+    base_path = create_base_path(__file__)
 
     Flow(
         load(url, name=table_name, format='csv', force_strings=False),
         joined_lower(resources=table_name),
-        dump_to_path(path),
-        # dump_to_sql(tables={table_name: {'resource-name': table_name}},
-        #             engine='env://DATAFLOWS_DB_ENGINE')
-        ).process()
+        dump_to_s3(resources=table_name, params=dict(base_path=base_path))
+    ).process()
 
 if __name__ == '__main__':
     ETL()
