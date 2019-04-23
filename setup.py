@@ -10,10 +10,14 @@ setup(name='lib',
       packages=['lib'],
       install_requires=[
             'click',
-            'dataflows',
+            'python-dotenv', 
+            'gdal',
+            'psycopg2-binary',
+            'pytest',
+            'dataflows'
       ], 
       entry_points='''
         [console_scripts]
         cook=lib.cli:cli
-      ''',
+      '''
       )

@@ -2,7 +2,9 @@
 .ipynb_checkpoints
 .sources
 .dpp
-.env
+.pytest_cache
 *.csv
-lib/__pycache__/
-lib.egg-info/
+*.DS_Store
+*.egg-info/
+*__pycache__/
+settings.sh
