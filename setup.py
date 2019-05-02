@@ -11,7 +11,6 @@ setup(name='lib',
       install_requires=[
             'click',
             'python-dotenv', 
-            'gdal',
             'psycopg2-binary',
             'pytest',
             'dataflows'

@@ -4,8 +4,8 @@ from pathlib import Path
 
 
 def ETL():
-    table_name = 'dca_operatingbusinesses'
-    url='https://data.cityofnewyork.us/api/views/w7w3-xahh/rows.csv?accessType=DOWNLOAD'
+    table_name = 'doitt_libraries'
+    url = 'https://data.cityofnewyork.us/api/views/feuq-due4/rows.csv?accessType=DOWNLOAD'
     base_path = create_base_path(__file__)
 
     Flow(

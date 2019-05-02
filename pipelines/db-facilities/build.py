@@ -1,5 +1,5 @@
-from dataflows import Flow, load, dump_to_path
-from lib import create_base_path, get_url, dump_to_s3
+from dataflows import Flow, load, dump_to_path, printer, set_type
+from lib import create_base_path, get_url, dump_to_s3, find_replace
 import csv
 import os
 import sys
@@ -18,7 +18,7 @@ def ETL():
     import pprint
     pp = pprint.PrettyPrinter(indent=4)
     base_path = create_base_path(__file__)
-
+    
     Flow(
         Load('doe_universalprek', 'latest'),
         Load('hhc_hospitals', 'latest'),
@@ -32,7 +32,12 @@ def ETL():
         Load('dfta_contracts','latest'),
         Load('dycd_afterschoolprograms','latest'),
         Load('bic_tradewaste','latest'),
-        Load('dca_operatingbusinesses','latest'), 
+        Load('doitt_libraries','latest'),
+        Load('nysdec_solidwaste','latest'),
+        Load('nysomh_mentalhealth','latest'),
+        Load('nysdoh_healthfacilities','latest'),
+        Load('nysopwdd_providers','latest'),
+        Load('usnps_parks','latest'),
         dump_to_s3(params=dict(base_path=base_path))
     ).process()
 

@@ -6,7 +6,7 @@ csv.field_size_limit(sys.maxsize)
 
 def ETL():
     table_name = 'dpr_parksproperties'
-    url = 'https://data.cityofnewyork.us/api/views/4bx8-udu2/rows.csv?accessType=DOWNLOAD'
+    url = 'https://data.cityofnewyork.us/api/views/9mej-zh79/rows.csv?accessType=DOWNLOAD'
 
     base_path = create_base_path(__file__)
 
