@@ -9,7 +9,6 @@ export BUCKET='BUCKETXXXXXXXXXXXXXXXXXXXX'
 
 ## install custom python pacakges
 pip install -e lib/
-pip install -e datapackage_pipelines_lib/
 
 ## settings for cli
 eval "$(_COOK_COMPLETE=source cook)"
