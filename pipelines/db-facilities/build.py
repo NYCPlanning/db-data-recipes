@@ -33,11 +33,13 @@ def ETL():
         Load('dycd_afterschoolprograms','latest'),
         Load('bic_tradewaste','latest'),
         Load('doitt_libraries','latest'),
+        Load('sbs_workforce1','latest'),
         Load('nysdec_solidwaste','latest'),
         Load('nysomh_mentalhealth','latest'),
         Load('nysdoh_healthfacilities','latest'),
         Load('nysopwdd_providers','latest'),
         Load('usnps_parks','latest'),
+        Load('dca_operatingbusinesses', 'latest'),
         dump_to_s3(params=dict(base_path=base_path))
     ).process()
 
