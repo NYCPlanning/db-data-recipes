@@ -39,6 +39,8 @@ def ETL():
         Load('nysopwdd_providers','latest'),
         Load('usnps_parks','latest'),
         Load('dca_operatingbusinesses', 'latest'),
+        Load('dep_wwtc', 'latest'), 
+        Load('foodbankny_foodbanks', 'latest'),
         dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
