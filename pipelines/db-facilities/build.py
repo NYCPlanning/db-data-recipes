@@ -41,6 +41,8 @@ def ETL():
         Load('dca_operatingbusinesses', 'latest'),
         Load('dep_wwtc', 'latest'), 
         Load('foodbankny_foodbanks', 'latest'),
+        Load('bpl_libraries', 'latest'),
+        Load('qpl_libraries', 'latest'),
         dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
