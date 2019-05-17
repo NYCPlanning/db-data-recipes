@@ -43,6 +43,7 @@ def ETL():
         Load('foodbankny_foodbanks', 'latest'),
         Load('bpl_libraries', 'latest'),
         Load('qpl_libraries', 'latest'),
+        Load('dsny_mtsgaragemaintenance', 'latest'),
         dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
