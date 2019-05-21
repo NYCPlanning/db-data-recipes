@@ -22,9 +22,9 @@ jobs:
       - run:
           name: install dependencies
           command: |
+            ls
             pip install -e .
             eval "$(_COOK_COMPLETE=source cook)"
-            ls
 
       # - run:
       #     name: run tests
