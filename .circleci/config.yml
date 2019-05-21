@@ -15,7 +15,7 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/postgres:9.4
 
-    working_directory: ~/db-data-recipes
+    working_directory: ~/db-data-recipes/
 
     steps:
       
@@ -23,8 +23,9 @@ jobs:
           name: install dependencies
           command: |
             ls
-            pip install -e .
-            eval "$(_COOK_COMPLETE=source cook)"
+            ls -l
+            # pip install -e .
+            # eval "$(_COOK_COMPLETE=source cook)"
 
       # - run:
       #     name: run tests
