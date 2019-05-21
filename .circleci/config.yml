@@ -23,10 +23,9 @@ jobs:
           name: install dependencies
           command: |
             pip install -e .
-            # eval "$(_COOK_COMPLETE=source cook)"
+            eval "$(_COOK_COMPLETE=source cook)"
 
       # - run:
-      #     name: run tests
+      #     name: run all recipes
       #     command: |
-      #       . venv/bin/activate
-      #       python manage.py test
+            # bash run/run_recipes.sh
