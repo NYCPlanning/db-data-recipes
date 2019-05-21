@@ -39,11 +39,16 @@ def ETL():
         Load('nysopwdd_providers','latest'),
         Load('usnps_parks','latest'),
         Load('dca_operatingbusinesses', 'latest'),
-        Load('dep_wwtc', 'latest'), 
+        Load('dep_wwtc', 'latest'),
         Load('foodbankny_foodbanks', 'latest'),
         Load('bpl_libraries', 'latest'),
         Load('qpl_libraries', 'latest'),
         Load('dsny_mtsgaragemaintenance', 'latest'),
+        Load('doe_lcgms', 'latest'),
+        Load('nysdoh_nursinghomes', 'latest'),
+        Load('nysed_activeinstitutions', 'latest'),
+        Load('usdot_airports', 'latest'),
+        Load('nysed_nonpublicenrollment', 'latest'),
         dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
