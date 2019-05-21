@@ -18,13 +18,11 @@ jobs:
     working_directory: ~/db-data-recipes/
 
     steps:
-      
+      - checkout:
       - run:
           name: install dependencies
           command: |
-            ls
-            ls -l
-            # pip install -e .
+            pip install -e .
             # eval "$(_COOK_COMPLETE=source cook)"
 
       # - run:
