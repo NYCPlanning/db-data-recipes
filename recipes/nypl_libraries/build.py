@@ -10,6 +10,8 @@ def ETL(data):
 
     Flow(
         data,
+        set_type('lon', type='string'),
+        set_type('lat', type='string'),
         update_resource(None, name=table_name),
         update_resource(resources=table_name, path=table_name+'.csv'),
         joined_lower(resources=table_name),
@@ -23,15 +25,15 @@ if __name__ == "__main__":
     records = json.loads(content)['locations']
     data = []
     for i in records:
-        data.append(dict(
-            lon = i['geolocation']['coordinates'][0],
-            lat = i['geolocation']['coordinates'][1],
+        parsed = dict(
+            lon = str(i['geolocation']['coordinates'][0]),
+            lat = str(i['geolocation']['coordinates'][1]),
             name = i['name'], 
             zipcode = i['postal_code'], 
             address = i['street_address'],
             locality = i['locality'], 
             region = i['region'],
             open = i['open']
-        ))
-        
+        )
+        data.append(parsed)
     ETL(data)

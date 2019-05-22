@@ -25,7 +25,7 @@ jobs:
             pip install -e .
             eval "$(_COOK_COMPLETE=source cook)"
 
-      # - run:
-      #     name: run all recipes
-      #     command: |
-            # bash run/run_recipes.sh
+      - run:
+          name: run piplines
+          command: |
+            cook pipeline run db-facilities
