@@ -33,7 +33,6 @@ if __name__ == "__main__":
             address = i['street_address'],
             locality = i['locality'], 
             region = i['region'],
-            open = i['open']
         )
         data.append(parsed)
     ETL(data)
