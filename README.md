@@ -1,4 +1,4 @@
-# db-data-recipes
+# db-data-recipes [![CircleCI](https://circleci.com/gh/NYCPlanning/db-data-recipes.svg?style=svg)](https://circleci.com/gh/NYCPlanning/db-data-recipes)
 
 ## Instructions
 + run ```source settings.sh``` at root directory
