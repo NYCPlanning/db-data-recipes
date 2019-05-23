@@ -50,6 +50,7 @@ def ETL():
         Load('usdot_airports', 'latest'),
         Load('nysed_nonpublicenrollment', 'latest'),
         Load('nypl_libraries', 'latest'),
+        Load('usdot_ports', 'latest'),
         dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
