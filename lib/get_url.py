@@ -13,7 +13,7 @@ def get_url(recipe, version):
     
     try: 
         if version == 'latest':
-            dpkg = list(filter(lambda x: Path(x).parts[3] == 'datapackage.json', versions))[0]
+            dpkg = list(filter(lambda x: Path(x).parts[3] == 'datapackage.json', versions))[-1]
         else: 
             dpkg = list(filter(lambda x: (Path(x).parts[2] == version)\
                     and (Path(x).parts[3] == 'datapackage.json'), versions))[0]
