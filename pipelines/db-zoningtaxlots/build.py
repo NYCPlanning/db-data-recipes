@@ -28,6 +28,7 @@ def ETL():
         Load('dcp_specialpurposesubdistricts','latest'),
         Load('dcp_zoningdistricts','latest'),
         Load('dcp_zoningmapamendments','latest'),
+        Load('dcp_zoningtaxlots', 'latest'),
         dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
