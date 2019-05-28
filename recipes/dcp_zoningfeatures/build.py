@@ -7,6 +7,10 @@ import requests
 from pathlib import Path
 import urllib.request
 import zipfile
+import csv
+import sys
+
+csv.field_size_limit(sys.maxsize)
 
 ftp_prefix = os.environ.get('FTP_PREFIX')
 
@@ -30,7 +34,7 @@ def shp_to_csv():
     sourcePath = Path(__file__).parent
     shapefiles = [filepath for filepath in Path(sourcePath/'tmp').glob('**/*') if filepath.suffix == '.shp']
     for file in shapefiles:
-        srcDS = gdal.OpenEx(str(shapefiles[0]))
+        srcDS = gdal.OpenEx(str(file))
         gdal.VectorTranslate(
             str(sourcePath.joinpath(f'tmp/{table_lookup[file.name]}.csv')),
             srcDS,
