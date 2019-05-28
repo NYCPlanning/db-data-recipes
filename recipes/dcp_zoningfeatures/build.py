@@ -34,6 +34,7 @@ def shp_to_csv():
     sourcePath = Path(__file__).parent
     shapefiles = [filepath for filepath in Path(sourcePath/'tmp').glob('**/*') if filepath.suffix == '.shp']
     for file in shapefiles:
+        print(file)
         srcDS = gdal.OpenEx(str(file))
         gdal.VectorTranslate(
             str(sourcePath.joinpath(f'tmp/{table_lookup[file.name]}.csv')),

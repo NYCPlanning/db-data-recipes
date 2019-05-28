@@ -8,9 +8,8 @@ def get_url(recipe, version):
     client = make_client()
 
     get_last_modified = lambda obj: int(obj['LastModified'].strftime('%s'))
-    objs = client.list_objects_v2(Bucket=bucket, Prefix=f'recipes/{recipe}').get('Contents') 
+    objs = client.list_objects_v2(Bucket=bucket, Prefix=f'recipes/{recipe}/').get('Contents') 
     versions = [obj['Key'] for obj in sorted(objs, key=get_last_modified)]
-    
     try: 
         if version == 'latest':
             dpkg = list(filter(lambda x: Path(x).parts[3] == 'datapackage.json', versions))[-1]
