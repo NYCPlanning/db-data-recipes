@@ -29,3 +29,9 @@ jobs:
           name: run piplines
           command: |
             cook pipeline run db-facilities
+
+      - run:
+          name: push dtm
+          command: |
+            cook recipe run dof_dtm
+            
