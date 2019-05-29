@@ -25,10 +25,10 @@ jobs:
             pip install -e .
             eval "$(_COOK_COMPLETE=source cook)"
 
-      # # - run:
-      # #     name: run facilities
-      # #     command: |
-      #       cook pipeline run db-facilities
+      - run:
+          name: run zoningmapindex
+          command: |
+            cook recipe run dcp_zoningmapindex
 
       - run:
           name: run zoningtaxlots
