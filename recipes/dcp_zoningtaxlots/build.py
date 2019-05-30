@@ -26,7 +26,7 @@ def ETL(table_name):
     sourcePath = Path(__file__).parent
     file_path = [filepath for filepath in Path(sourcePath/'tmp').glob('**/*') if filepath.suffix == '.csv'][0]
     Flow(
-        load(str(file_path), name=table_name, format='csv', force_strings=False),
+        load(str(file_path), name=table_name, format='csv', force_strings=True),
         joined_lower(resources=table_name),
         update_resource(None, name=table_name),
         update_resource(resources=table_name, path=table_name+'.csv'),

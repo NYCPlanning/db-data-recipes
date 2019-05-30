@@ -7,7 +7,7 @@ def ETL():
     base_path = create_base_path(__file__)
     file_path = Path(__file__).parent/'nysed_activeinstitutions.csv'
     Flow(
-        load(str(file_path), name=table_name, format='csv', force_strings=False),
+        load(str(file_path), name=table_name, format='csv', force_strings=True),
         joined_lower(resources=table_name),
         rename_field('gis_longitute_(x)', 'gis_longitute_x'), 
         rename_field('gis_latitude_(y)', 'gis_latitude_y'),

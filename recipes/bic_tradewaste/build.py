@@ -7,7 +7,7 @@ def ETL():
     url = 'https://data.cityofnewyork.us/api/views/hsjb-p5ky/rows.csv'
     base_path = create_base_path(__file__)
     Flow(
-        load(url, name=table_name, format='csv', force_strings=False),
+        load(url, name=table_name, format='csv', force_strings=True),
         joined_lower(resources=table_name),
         dump_to_s3(resources=table_name, params=dict(base_path=base_path))
     ).process()

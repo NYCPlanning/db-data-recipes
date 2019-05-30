@@ -25,7 +25,7 @@ def ETL():
     base_path = create_base_path(__file__)
     file_path = Path(__file__).parent/'dcp_pops.csv'
     Flow(
-        # load(f'{str(Path(__file__).parent)}/tmp/dcp_pops.csv', name=table_name, format='csv', force_strings=False),
+        # load(f'{str(Path(__file__).parent)}/tmp/dcp_pops.csv', name=table_name, format='csv', force_strings=True),
         load(str(file_path), name=table_name, format='csv', force_strings=True),
         joined_lower(resources=table_name),  
         # set_type('dcp_record', resources=table_name, type='string'),

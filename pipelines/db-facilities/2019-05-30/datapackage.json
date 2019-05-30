@@ -1,0 +1,367 @@
+{
+  "bytes": 987042,
+  "count_of_rows": 4093,
+  "hash": "fe87de037cb4e3a095408c09b00e111e",
+  "profile": "data-package",
+  "resources": [
+    {
+      "bytes": 479138,
+      "count_of_rows": 1885,
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "2be8dc6681fc067e183ccd268ae6f5b1",
+      "name": "doe_universalprek",
+      "path": "doe_universalprek.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "loccode",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "prek_type",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "borough",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "locname",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "note",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "phone",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "address",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "postcode",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "day_length",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "seats",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "x",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "y",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "email",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "website",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "meals",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "indoor_outdoor",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "extended_day",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "sems_code",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "latitude",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "longitude",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "community_board",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "council_district",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "census_tract",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "bin",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "bbl",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "nta",
+            "type": "string"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    },
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "hhc_hospitals",
+      "path": "hhc_hospitals.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "facility_type",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "borough",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "facility_name",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "cross_streets",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "phone",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "location_1",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "postcode",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "latitude",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "longitude",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "community_board",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "council_district",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "census_tract",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "bin",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "bbl",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "nta",
+            "type": "string"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    },
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "dcla_culturalinstitutions",
+      "path": "dcla_culturalinstitutions.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "organization_name",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "address",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "city",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "state",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "postcode",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "main_phone_#",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "discipline",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "council_district",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "community_board",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "borough",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "latitude",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "longitude",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "census_tract",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "bin",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "bbl",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "nta",
+            "type": "string"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ]
+}

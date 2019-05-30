@@ -8,7 +8,7 @@ def test_dump_to_postgis():
     table_name = 'nycha_policeservice'
     url = 'https://data.cityofnewyork.us/api/views/bvi6-r9nk/rows.csv?accessType=DOWNLOAD'
     f = Flow(
-        load(url, name=table_name, format='csv', force_strings=False),
+        load(url, name=table_name, format='csv', force_strings=True),
         dump_to_postgis(engine='env://DATAFLOWS_DB_ENGINE')
         )
     
@@ -34,7 +34,7 @@ def test_dump_to_s3():
     base_path = create_csv_path(table_name)
 
     f = Flow(
-        load(url, name=table_name, format='csv', force_strings=False),
+        load(url, name=table_name, format='csv', force_strings=True),
         dump_to_s3(resources=table_name, params=dict(base_path=base_path))
         )
     f.process()
@@ -57,7 +57,7 @@ def test_chained_flow():
     table_name = 'nycha_policeservice'
     url = 'https://data.cityofnewyork.us/api/views/bvi6-r9nk/rows.csv?accessType=DOWNLOAD'
     f = Flow(
-        load(url, name=table_name, format='csv', force_strings=False),
+        load(url, name=table_name, format='csv', force_strings=True),
         dump_to_postgis(resources=table_name, db_table_name=table_name, engine='env://DATAFLOWS_DB_ENGINE')
         )
     

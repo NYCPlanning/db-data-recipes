@@ -55,7 +55,7 @@ def ETL(table_name):
     base_path = base_path.replace('dcp_zoningfeatures', table_name)
     file_path = Path(__file__).parent/'tmp'/f'{table_name}.csv'
     Flow(
-        load(str(file_path), name=table_name, format='csv', force_strings=False),
+        load(str(file_path), name=table_name, format='csv', force_strings=True),
         joined_lower(resources=table_name),
         dump_to_s3(resources=table_name, params=dict(base_path=base_path))
     ).process()

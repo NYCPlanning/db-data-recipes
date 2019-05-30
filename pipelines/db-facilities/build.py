@@ -9,7 +9,7 @@ csv.field_size_limit(sys.maxsize)
 def Load(recipe, version, **kwargs):
     
     url = get_url(recipe, version)
-
+    print(url)
     return  Flow(
         load(url, name=recipe, format='csv', force_strings=True, validate=False)
         )
@@ -55,7 +55,8 @@ def ETL():
         Load('dot_bridgehouses', 'latest'),
         Load('dot_ferryterminals', 'latest'),
         Load('dot_publicparking', 'latest'),
-        dump_2_s3(params=dict(base_path=base_path))
+        dump_to_path(base_path)
+        # dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
 if __name__ == "__main__":
