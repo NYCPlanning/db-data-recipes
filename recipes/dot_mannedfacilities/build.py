@@ -11,7 +11,7 @@ import zipfile
 ftp_prefix = os.environ.get('FTP_PREFIX')
 
 def unzip(table_name):
-    url = ftp_prefix + '/agencysourcedata/dot/dot_municipalparking.zip'
+    url = ftp_prefix + '/agencysourcedata/dot/dot_mannedfacilities.zip'
     file_path = Path(__file__).parent/f'{table_name}.zip'
     urllib.request.urlretrieve(url, file_path)
     z = zipfile.ZipFile(file_path)
@@ -47,7 +47,7 @@ def ETL(table_name):
     ).process()
 
 if __name__ == '__main__':
-    table_name = 'dot_publicparking'
+    table_name = 'dot_mannedfacilities'
     unzip(table_name)
     shp_to_csv(table_name)
     ETL(table_name)
