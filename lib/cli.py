@@ -78,7 +78,7 @@ def list_recipes(recipe):
                         if c == 'y': 
                                 click.echo('\n')
                                 click.echo(f'running {recipe} ...')
-                                os.system(f'python {recipe_path/recipe}/build.py')
+                                os.system(f'python3 {recipe_path/recipe}/build.py')
                                 click.echo('\n')
                         elif c == 'n':
                                 click.echo('Ok bye ...')
@@ -88,7 +88,7 @@ def list_recipes(recipe):
 @recipe.command('run')
 @click.argument('recipe', type=click.STRING, autocompletion=get_recipes)
 def run_recipes(recipe):
-    os.system(f'python {recipe_path/recipe}/build.py')
+    os.system(f'python3 {recipe_path/recipe}/build.py')
 
 
 @cli.group()
@@ -103,4 +103,4 @@ def get_pipelines(ctx, args, incomplete):
 @pipeline.command('run')
 @click.argument('pipeline', type=click.STRING, autocompletion=get_pipelines)
 def run_pipeline(pipeline):
-    os.system(f'python {pipeline_path/pipeline}/build.py')
+    os.system(f'python3 {pipeline_path/pipeline}/build.py')

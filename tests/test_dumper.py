@@ -19,59 +19,59 @@ def test_dump_to_postgis():
     print(result)
     assert result == [{'wkb_geometry': '0101000020E61000001FCF149C617F52C0D7CE5B5AD9494440'}]
 
-def test_dump_to_s3():
-    from dataflows import Flow, load, update_resource
-    from lib import dump_to_s3, get_resource, create_csv_path
-    from pathlib import Path
-    from lib.s3.make_client import make_client
-    import os
+# def test_dump_to_s3():
+#     from dataflows import Flow, load, update_resource
+#     from lib import dump_to_s3, get_resource, create_csv_path
+#     from pathlib import Path
+#     from lib.s3.make_client import make_client
+#     import os
     
-    client = make_client()
-    bucket = os.environ.get('BUCKET')
-    table_name = 'nycha_policeservice'
-    url = 'https://data.cityofnewyork.us/api/views/bvi6-r9nk/rows.csv?accessType=DOWNLOAD'
+#     client = make_client()
+#     bucket = os.environ.get('BUCKET')
+#     table_name = 'nycha_policeservice'
+#     url = 'https://data.cityofnewyork.us/api/views/bvi6-r9nk/rows.csv?accessType=DOWNLOAD'
 
-    base_path = create_csv_path(table_name)
+#     base_path = create_csv_path(table_name)
 
-    f = Flow(
-        load(url, name=table_name, format='csv', force_strings=True),
-        dump_to_s3(resources=table_name, params=dict(base_path=base_path))
-        )
-    f.process()
-    objs = client.list_objects_v2(Bucket=bucket, Prefix=table_name)
-    contents = objs.get('Contents')
-    for i in contents: 
-        if i.get('Key') == 'nycha_policeservice/2019-04-04/nycha_policeservice.csv':
-            assert i.get('ETag') == '"9bce2fe3b5963c6c2512b2d7a1a3cb97"'
-        else:
-            pass
+#     f = Flow(
+#         load(url, name=table_name, format='csv', force_strings=True),
+#         dump_to_s3(resources=table_name, params=dict(base_path=base_path))
+#         )
+#     f.process()
+#     objs = client.list_objects_v2(Bucket=bucket, Prefix=table_name)
+#     contents = objs.get('Contents')
+#     for i in contents: 
+#         if i.get('Key') == 'nycha_policeservice/2019-04-04/nycha_policeservice.csv':
+#             assert i.get('ETag') == '"9bce2fe3b5963c6c2512b2d7a1a3cb97"'
+#         else:
+#             pass
 
-def test_chained_flow():
-    from dataflows import Flow, load, dump_to_path
-    from lib import dump_to_postgis, create_csv_path
-    from sqlalchemy import create_engine
-    import os 
-    import sys
-    from pathlib import Path
+# def test_chained_flow():
+#     from dataflows import Flow, load, dump_to_path
+#     from lib import dump_to_postgis, create_csv_path
+#     from sqlalchemy import create_engine
+#     import os 
+#     import sys
+#     from pathlib import Path
     
-    table_name = 'nycha_policeservice'
-    url = 'https://data.cityofnewyork.us/api/views/bvi6-r9nk/rows.csv?accessType=DOWNLOAD'
-    f = Flow(
-        load(url, name=table_name, format='csv', force_strings=True),
-        dump_to_postgis(resources=table_name, db_table_name=table_name, engine='env://DATAFLOWS_DB_ENGINE')
-        )
+#     table_name = 'nycha_policeservice'
+#     url = 'https://data.cityofnewyork.us/api/views/bvi6-r9nk/rows.csv?accessType=DOWNLOAD'
+#     f = Flow(
+#         load(url, name=table_name, format='csv', force_strings=True),
+#         dump_to_postgis(resources=table_name, db_table_name=table_name, engine='env://DATAFLOWS_DB_ENGINE')
+#         )
     
-    path = Path(__file__).parent/create_csv_path(table_name)
+#     path = Path(__file__).parent/create_csv_path(table_name)
 
-    t = Flow(
-        f,
-        print('we dump to path'),
-        dump_to_path(path)
-    )
+#     t = Flow(
+#         f,
+#         print('we dump to path'),
+#         dump_to_path(path)
+#     )
     
-    t.process()
+#     t.process()
     
-    if Path(path/'datapackage.json').exists(): 
-        os. system(f'rm -r tests/nycha_policeservice')
-    else:
-        assert Path(path/'datapackage.json').exists(), 'dump to path failed, datapackage.json does not exist'
+#     if Path(path/'datapackage.json').exists(): 
+#         os. system(f'rm -r tests/nycha_policeservice')
+#     else:
+#         assert Path(path/'datapackage.json').exists(), 'dump to path failed, datapackage.json does not exist'
