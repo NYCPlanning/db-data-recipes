@@ -9,10 +9,9 @@ csv.field_size_limit(sys.maxsize)
 def Load(recipe, version, **kwargs):
     
     url = get_url(recipe, version)
-    print(url)
 
     return  Flow(
-        load(url, name=recipe, format='csv', force_strings=True)
+        load(url, name=recipe, format='csv', force_strings=True, validate=False)
         )
 
 def ETL(): 
@@ -20,7 +19,7 @@ def ETL():
     base_path = create_base_path(__file__)
     
     Flow(
-        # Load('doe_universalprek', 'latest'),
+        Load('doe_universalprek', 'latest'),
         Load('hhc_hospitals', 'latest'),
         Load('dcla_culturalinstitutions','latest'),
         Load('nycha_policeservice','latest'),
