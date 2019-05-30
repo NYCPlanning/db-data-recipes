@@ -8,10 +8,10 @@ import urllib.request
 import ssl
 import json
 
-
 def ETL(data):
     table_name = 'snap_centers'
     base_path = create_base_path(__file__)
+
 
     Flow(
         data,
@@ -30,16 +30,16 @@ if __name__ == "__main__":
     for i in range(len(soup.find_all("b"))):
         fclty = soup.find_all("b")[i].text.replace(':', '')
         addr = soup.find_all("b")[i].next_sibling.replace(':', '').replace('\xa0', '')[1:]
-        address = [x.strip() for x in addr[:-6].split(',')]
+        address = [x.strip() for x in addr[:-5].split(',')]
         address.append(addr[-5:])
         result = {}
         result['facility_name'] = fclty
-        result['address1'] = address[0]
+        result['address'] = address[0]
         result['address2'] = address[1]
         result['city'] = address[2]
         result['state'] = address[3]
         result['zipcode'] = address[4]
         result['type'] = 'SNAP Center'
         data.append(result)
-
+        
     ETL(data)
