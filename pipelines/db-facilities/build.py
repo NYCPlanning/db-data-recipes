@@ -20,7 +20,7 @@ def ETL():
     base_path = create_base_path(__file__)
     
     Flow(
-        Load('doe_universalprek', 'latest'),
+        # Load('doe_universalprek', 'latest'),
         Load('hhc_hospitals', 'latest'),
         Load('dcla_culturalinstitutions','latest'),
         Load('nycha_policeservice','latest'),
