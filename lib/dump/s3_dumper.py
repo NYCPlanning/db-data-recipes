@@ -31,28 +31,27 @@ class S3Dumper(FileDumper):
     def write_file_to_output(self, filename, path, allow_create_bucket=True):
         key = os.path.join(self.base_path, path.replace('./',''))
         content_type, _ = mimetypes.guess_type(key)
-        md5 = S3Dumper.md5_checksum(filename)
+        # md5 = S3Dumper.md5_checksum(filename)
 
         try: #check for repetition
-            contents = self.client\
-                       .list_objects_v2(Bucket=self.bucket, Prefix=str(Path(self.base_path).parent))\
-                       .get('Contents')
-            
-            if contents:
-                etags = [i.get('ETag').replace('"', '') for i in contents]
-            else: 
-                etags = []
+            # contents = self.client\
+            #            .list_objects_v2(Bucket=self.bucket, Prefix=str(Path(self.base_path).parent))\
+            #            .get('Contents')
+            # if contents:
+            #     etags = [i.get('ETag').replace('"', '') for i in contents]
+            # else:
+            #     etags = []
 
-            if md5 in etags: 
-                print(f'{key} is already the lastest')
-            else: 
-                self.put_object(
-                    ACL=self.acl,
-                    Body=open(filename, 'rb'),
-                    Bucket=self.bucket,
-                    ContentType=self.content_type or content_type or 'text/plain',
-                    Key=key)
-                print(f'dumped to {key}')
+            # if md5 in etags: 
+            #     print(f'{key} is already the lastest')
+            # else: 
+            self.put_object(
+                ACL=self.acl,
+                Body=open(filename, 'rb'),
+                Bucket=self.bucket,
+                ContentType=self.content_type or content_type or 'text/plain',
+                Key=key)
+            print(f'dumped to {key}')
 
         except self.client.exceptions.NoSuchBucket:
 
