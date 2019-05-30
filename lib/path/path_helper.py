@@ -6,5 +6,5 @@ def create_csv_path(path):
     return str(new_path)
 
 def create_base_path(path):
-    base_path = create_csv_path(Path(path).parent.relative_to(Path(path).cwd()))
+    base_path = create_csv_path(Path(path).resolve().parent.relative_to(Path(path).cwd()))
     return str(base_path)
