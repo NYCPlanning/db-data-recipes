@@ -9,7 +9,7 @@ import ssl
 import json
 
 def ETL(data):
-    table_name = 'snap_centers'
+    table_name = 'hra_snapcenters'
     base_path = create_base_path(__file__)
 
 
