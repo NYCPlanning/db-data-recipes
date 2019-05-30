@@ -23,6 +23,7 @@ jobs:
           name: install dependencies
           command: |
             pip install -e .
+            pip install dataflows -U
             eval "$(_COOK_COMPLETE=source cook)"
 
       - run:
