@@ -10,9 +10,12 @@ def Load(recipe, version, **kwargs):
     
     url = get_url(recipe, version)
     print(url)
-    return  Flow(
-        load(url, name=recipe, format='csv', force_strings=True, validate=False)
-        )
+    try: 
+        return  Flow(
+            load(url, name=recipe, format='csv', force_strings=True, validate=False)
+            )
+    except: 
+        print(recipe)
 
 def ETL(): 
     import pprint
