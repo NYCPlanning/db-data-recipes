@@ -30,7 +30,7 @@
     ```
     + Within the etl docker container, download the beautifulsoup package for web scraping
     ```
-    pip install b4
+    pip install bs4
     ```
 
     + start a postgis container named db
