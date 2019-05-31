@@ -12,7 +12,7 @@ def ETL():
         add_field('type', 'string', 'Medicaid Office'),
         joined_lower(resources=table_name),
         update_resource(resources=table_name, path=table_name+'.csv'),
-        # dump_to_s3(resources=table_name, params=dict(base_path=base_path))     
+        dump_to_s3(resources=table_name, params=dict(base_path=base_path))     
     ).process()
 
 if __name__ == '__main__':
