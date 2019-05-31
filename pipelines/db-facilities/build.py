@@ -58,8 +58,7 @@ def ETL():
         Load('dot_bridgehouses', 'latest'),
         Load('dot_ferryterminals', 'latest'),
         Load('dot_publicparking', 'latest'),
-        dump_to_path(base_path)
-        # dump_2_s3(params=dict(base_path=base_path))
+        dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
 if __name__ == "__main__":
