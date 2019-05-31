@@ -33,3 +33,8 @@ jobs:
           name: run facilities
           command: |
             cook pipeline run db-facilities
+      
+      - run:
+          name: run zoningtaxlots
+          command: |
+            cook pipeline run db-zoningtaxlots
