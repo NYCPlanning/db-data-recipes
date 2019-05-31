@@ -17,7 +17,6 @@ def download_unzip():
 def shp_to_csv():
     root = Path(__file__).parent
     shapefiles = [root/'nps_boundry'/each for each in os.listdir(root/'nps_boundry') if each.endswith('.shp')]
-    # print(shapefiles)
     srcDS = gdal.OpenEx(str(shapefiles[0]))
     gdal.VectorTranslate(
         str(root/'nps_boundry'/'usnps_parks.csv'),
@@ -35,11 +34,10 @@ def ETL():
     Flow(
         load(str(file_path), name=table_name, format='csv', force_strings=True),
         joined_lower(resources=table_name),
-        # dump_to_postgis(),
         dump_to_s3(resources=table_name, params=dict(base_path=base_path))
     ).process()
 
 if __name__ == '__main__':
-    # download_unzip()
-    # shp_to_csv()
+    download_unzip()
+    shp_to_csv()
     ETL()
