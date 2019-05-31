@@ -26,12 +26,10 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            pip install -e .
-            pip install dataflows -U
+            pip3 install -e .
             eval "$(_COOK_COMPLETE=source cook)"
 
-      # - run:
-      #     name: run facilities
-      #     command: |
-      #       cook pipeline run db-facilities
-            
+      - run:
+          name: run facilities
+          command: |
+            cook pipeline run db-facilities
