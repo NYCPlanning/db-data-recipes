@@ -17,22 +17,9 @@
             -v `pwd`:/home/db-data-recipes\
             --network=host\
             -w /home/db-data-recipes\
-            sptkl/docker-dataloading /bin/bash -c "sh settings.sh; bash"
+            sptkl/docker-dataloading:latest /bin/bash -c "sh settings.sh; bash"
     ```
-    or 
-
-    ```
-    docker run -itd --name=etl\
-            -v `pwd`:/home/db-data-recipes\
-            --network=host\
-            -w /home/db-data-recipes\
-            sptkl/docker-dataloading /bin/bash -c "pip install -e .; bash"
-    ```
-    + Within the etl docker container, download the beautifulsoup package for web scraping
-    ```
-    pip install bs4
-    ```
-
+    
     + start a postgis container named db
 
     ```
