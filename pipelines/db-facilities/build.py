@@ -58,12 +58,7 @@ def ETL():
         Load('dot_bridgehouses', 'latest'),
         Load('dot_ferryterminals', 'latest'),
         Load('dot_publicparking', 'latest'),
-        Load('hra_casaoffices', 'latest'),
-        Load('hra_hasacenters', 'latest'),
-        Load('hra_jobcenters', 'latest'),
-        Load('hra_medicaidoffices', 'latest'),
-        Load('hra_ocsscenters', 'latest'),
-        Load('hra_snapcenters', 'latest'),
+        Load('hra_centers', 'latest'),
         dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
