@@ -15,9 +15,14 @@
     ```
     docker run -itd --name=etl\
             -v `pwd`:/home/db-data-recipes\
+            -e "AWS_ACCESS_KEY_ID={XXXXXXXXXXX}"\
+            -e "AWS_SECRET_ACCESS_KEY={XXXXXXXXXXXXXXX}"\
+            -e "S3_ENDPOINT_URL={https://XXX.XXXXXXX.com}"\
+            -e "BUCKET=db-data-recipes"\
+            -e "FTP_PREFIX=ftp://b_zhou:PASSWORD@23.246.114.130"\
             --network=host\
             -w /home/db-data-recipes\
-            sptkl/docker-dataloading:latest /bin/bash -c "sh settings.sh; bash"
+            sptkl/docker-dataloading:latest /bin/bash -c "sh settings.example.sh; bash"
     ```
     
     + start a postgis container named db
