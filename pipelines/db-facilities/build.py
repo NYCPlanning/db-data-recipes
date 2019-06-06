@@ -59,6 +59,11 @@ def ETL():
         Load('dot_ferryterminals', 'latest'),
         Load('dot_publicparking', 'latest'),
         Load('hra_centers', 'latest'),
+<<<<<<< HEAD
+        Load('nysdec_lands', 'latest'),
+=======
+        Load('nycha_communitycenters', 'latest'),
+>>>>>>> eeccc82... add recipe for nycha_communitycenters
         dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
