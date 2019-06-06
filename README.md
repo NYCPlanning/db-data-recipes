@@ -19,7 +19,7 @@
             -e "AWS_SECRET_ACCESS_KEY={XXXXXXXXXXXXXXX}"\
             -e "S3_ENDPOINT_URL={https://XXX.XXXXXXX.com}"\
             -e "BUCKET=db-data-recipes"\
-            -e "FTP_PREFIX=ftp://b_zhou:PASSWORD@23.246.114.130"\
+            -e "FTP_PREFIX=ftp://USERNAME:PASSWORD@23.246.114.130"\
             --network=host\
             -w /home/db-data-recipes\
             sptkl/docker-dataloading:latest /bin/bash -c "sh settings.example.sh; bash"
