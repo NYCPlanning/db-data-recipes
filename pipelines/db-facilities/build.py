@@ -60,6 +60,7 @@ def ETL():
         Load('dot_publicparking', 'latest'),
         Load('hra_centers', 'latest'),
         Load('nysdec_lands', 'latest'),
+        Load('nycha_communitycenters', 'latest'),
         dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
