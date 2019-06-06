@@ -15,9 +15,14 @@
     ```
     docker run -itd --name=etl\
             -v `pwd`:/home/db-data-recipes\
+            -e "AWS_ACCESS_KEY_ID=XXXXXXXXXXX"\
+            -e "AWS_SECRET_ACCESS_KEY=XXXXXXXXXXX"\
+            -e "S3_ENDPOINT_URL=https://XXXXXXXXXX.com"\
+            -e "BUCKET=YOUR_BUCKET"\
+            -e "FTP_PREFIX=ftp://USERNAME:PASSWORD@FTP.IP.ADDRESS"\
             --network=host\
             -w /home/db-data-recipes\
-            sptkl/docker-dataloading:latest /bin/bash -c "sh settings.sh; bash"
+            sptkl/docker-dataloading:latest /bin/bash -c "sh settings.example.sh; bash"
     ```
     
     + start a postgis container named db
@@ -52,7 +57,7 @@
     ```
      dump_to_postgis(resource='nycha_policeservice',
                         db_table_name='nycha_policeservice',
-                        engine='postgresql://postgres:0312@localhost:5432/postgres',
+                        engine='postgresql://postgres:xxxx@localhost:5432/postgres',
                         drcSRS='EPSG:4326',
                         srcSRS='EPSG:4326',
                         )
