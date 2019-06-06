@@ -15,11 +15,11 @@
     ```
     docker run -itd --name=etl\
             -v `pwd`:/home/db-data-recipes\
-            -e "AWS_ACCESS_KEY_ID={XXXXXXXXXXX}"\
-            -e "AWS_SECRET_ACCESS_KEY={XXXXXXXXXXXXXXX}"\
-            -e "S3_ENDPOINT_URL={https://XXX.XXXXXXX.com}"\
-            -e "BUCKET=db-data-recipes"\
-            -e "FTP_PREFIX=ftp://USERNAME:PASSWORD@123.123.123.123"\
+            -e "AWS_ACCESS_KEY_ID=XXXXXXXXXXX"\
+            -e "AWS_SECRET_ACCESS_KEY=XXXXXXXXXXXXXXX"\
+            -e "S3_ENDPOINT_URL=https://XXX.XXXXXXX.com"\
+            -e "BUCKET=YOUR-BUCKET"\
+            -e "FTP_PREFIX=ftp://USERNAME:PASSWORD@YOUR.FTP.IP.ADDRESS"\
             --network=host\
             -w /home/db-data-recipes\
             sptkl/docker-dataloading:latest /bin/bash -c "sh settings.example.sh; bash"
@@ -57,7 +57,7 @@
     ```
      dump_to_postgis(resource='nycha_policeservice',
                         db_table_name='nycha_policeservice',
-                        engine='postgresql://postgres:0312@localhost:5432/postgres',
+                        engine='postgresql://postgres@localhost:5432/postgres',
                         drcSRS='EPSG:4326',
                         srcSRS='EPSG:4326',
                         )
