@@ -59,6 +59,7 @@ def ETL():
         Load('dot_ferryterminals', 'latest'),
         Load('dot_publicparking', 'latest'),
         Load('hra_centers', 'latest'),
+        Load('nysdec_lands', 'latest'),
         dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
