@@ -13,8 +13,9 @@ setup(name='lib',
             'python-dotenv', 
             'psycopg2-binary',
             'pytest',
-            'dataflows',
-            'bs4'
+            'dataflows', 
+            'bs4',
+            'pandas'
       ], 
       entry_points='''
         [console_scripts]
