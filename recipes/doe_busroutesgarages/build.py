@@ -9,6 +9,8 @@ def ETL():
 
     Flow(
         load(url, name=table_name, format='csv', force_strings=True),
+        update_resource(None, name=table_name),
+        update_resource(resources=table_name, path=table_name+'.csv'),
         joined_lower(resources=table_name),
         dump_to_s3(resources=table_name, params=dict(base_path=base_path))
     ).process()

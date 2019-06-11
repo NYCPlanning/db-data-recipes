@@ -12,7 +12,7 @@ def Load(recipe, version, **kwargs):
     print(url)
     try: 
         return  Flow(
-            load(url, name=recipe, format='csv', force_strings=True, validate=False)
+            load(url, name=recipe, format='csv')
             )
     except: 
         print(recipe)
