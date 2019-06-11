@@ -5,7 +5,6 @@ from pathlib import Path
 import urllib.request
 import pandas as pd
 import re
-import json
 
 def download_file():
     url = 'https://maps.nyc.gov/prek/data/pka/pka.csv'
@@ -13,7 +12,7 @@ def download_file():
     file_path = Path(__file__).parent/'tmp'/f'{table_name}.csv'
     urllib.request.urlretrieve(url, file_path)
 
-def clean_up(): 
+def clean_up():
     tmp_path = Path(__file__).parent/'tmp'
     os.system(f'rm -r {tmp_path}')
 

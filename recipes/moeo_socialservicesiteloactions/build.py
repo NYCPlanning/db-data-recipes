@@ -5,7 +5,6 @@ from pathlib import Path
 import urllib.request
 
 ftp_prefix = os.environ.get('FTP_PREFIX')
-# file_name = 'Social_Service_Site_Location_DCP_052319.xlsx'
 
 def download_file():
     url = ftp_prefix + '/agencysourcedata/moeo/Social_Service_Site_Location_DCP_052319.xlsx'
