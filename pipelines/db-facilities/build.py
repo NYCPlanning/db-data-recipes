@@ -67,6 +67,9 @@ def ETL():
         Load('fbop_corrections', 'latest'),
         Load('nysparks_historicplaces', 'latest'),
         Load('uscourts_courts', 'latest'),
+        Load('nysocfs_offices', 'latest'),
+        Load('nysoasas_programs', 'latest'),
+        Load('nysdoccs_corrections', 'latest'),
         dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
