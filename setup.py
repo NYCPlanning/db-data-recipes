@@ -16,6 +16,7 @@ setup(name='lib',
             'dataflows', 
             'bs4',
             'pandas'
+
       ], 
       entry_points='''
         [console_scripts]

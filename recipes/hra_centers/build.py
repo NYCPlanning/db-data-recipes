@@ -30,9 +30,13 @@ if __name__ == "__main__":
     for center in hra_centers.keys():
         html_content = urllib.request.urlopen(hra_centers[center])
         soup = BeautifulSoup(html_content, 'html.parser')
+        # descriptions is a string contains all information including names and addresses, operating hours for all facilities
         descriptions = soup.find_all('description')
-        facility = soup.find_all('name')   
+        # facility is a string contains all facility names
+        facility = soup.find_all('name')
         for d in range(1,len(descriptions)):
+            # An item contains the location, contact, hours info regarding each hra center
+            # ['Address: 404 Pine Street, 3rd Floor', 'Zipcode: 11208', 'Borough: Brooklyn', 'Phone: 718-250-5631', 'Hour: M-F 9:00 AM -5:00 PM']
             item = descriptions[d].text
             item = item.split('<br>')
             result = {}
@@ -40,13 +44,13 @@ if __name__ == "__main__":
             for i in range(len(item)):
                 result['facility_name'] = fclty
                 result['type'] = center
+                #parse is a tempary list contains the key/label and value for each item/facility
                 parse = item[i].split(': ')
                 key = parse[0]
                 value = parse[1]
-                if key == 'Location Address': 
-                    key = 'Address'
-                if key == 'Zip Code': 
-                    key = 'Zipcode'
+                # Normalized the field names between different types of hra centers,
+                if key == 'Location Address': key = 'Address'
+                if key == 'Zip Code': key = 'Zipcode'
                 result[key] = value
             data.append(result)
 
