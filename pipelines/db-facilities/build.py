@@ -64,6 +64,9 @@ def ETL():
         Load('nysdec_lands', 'latest'),
         Load('nycha_communitycenters', 'latest'),
         Load('moeo_socialservicesiteloactions', 'latest'),
+        Load('fbop_corrections', 'latest'),
+        Load('nysparks_historicplaces', 'latest'),
+        Load('uscourts_courts', 'latest'),
         dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
