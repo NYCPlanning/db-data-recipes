@@ -29,7 +29,8 @@ if __name__ == '__main__':
     page = urlopen(req, context=gcontext)
     soup = BeautifulSoup(page, features='html.parser')
     data = []
-    targets = ['Bellevue Hospital Prison Ward (BHPW)', 
+    targets = ['Anna M. Kross Center (AMKC)',
+            'Bellevue Hospital Prison Ward (BHPW)', 
             'Brooklyn Detention Complex (BKDC)', 
             'Elmhurst Hospital Prison Ward (EHPW)', 
             'Manhattan Detention Complex (MDC)', 
