@@ -1,6 +1,6 @@
 from dataflows import *
 from lib import joined_lower, create_base_path
-from lib import dump_to_s3
+from lib import dump_to_s3, get_hnum, get_sname, get_zipcode
 import requests
 from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
@@ -26,9 +26,13 @@ if __name__ == "__main__":
     data = []
     for i in soup.find_all('tr'):
         info = [item.strip() for item in i.get_text().split('\n') if item not in ['', 'Map', 'Driving Directions']]
+        address_long = ', '.join(info[1:-2]).split(', (')[0]
         result = dict(
             facility_name = info[0],
-            address = ', '.join(info[1:-2]).split(', (')[0],
+            address = address_long,
+            house_number = get_hnum(address_long),
+            street_name = get_sname(address_long), 
+            zipcode = get_zipcode(address_long),
             security_level = info[-2],
             male_or_female = info[-1]
         )

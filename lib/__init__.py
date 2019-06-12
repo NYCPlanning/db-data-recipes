@@ -10,3 +10,4 @@ from lib.find_replace import find_replace as find_replace
 from lib.set_type import set_type
 from lib.printer import printer
 from lib.s3.pipeline_version import get_version
+from .address_parser import get_hnum, get_sname, get_zipcode

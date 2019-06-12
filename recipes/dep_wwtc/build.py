@@ -1,48 +1,27 @@
 from dataflows import *
 from lib import joined_lower, create_base_path
-from lib import dump_to_s3
-import requests
-from bs4 import BeautifulSoup
-from urllib.request import Request, urlopen
-import ssl
-import json
+from lib import dump_to_s3, get_hnum, get_sname, get_zipcode
+from pathlib import Path
 
-def ETL(data):
+def ETL():
     table_name = 'dep_wwtc'
     base_path = create_base_path(__file__)
-
+    file_path = Path(__file__).parent/'dep_wwtc.csv'
     Flow(
-        data,
-        update_resource(None, name=table_name),
-        update_resource(resources=table_name, path=table_name+'.csv'),
-        add_computed_field([dict(target=dict(name = 'population_served', type = 'integer'),
-                            operation=lambda row: int(row['Population Served'].replace(',', ''))
-                            )
-                        ]),
-        delete_fields(fields=['Population Served']),
+        load(str(file_path), name=table_name, format='csv', force_strings=True),
         joined_lower(resources=table_name),
+        add_computed_field([dict(target=dict(name = 'zipcode', type = 'string'),
+                                operation=lambda row: get_zipcode(row['address'])
+                                        ),
+                        dict(target=dict(name = 'house_number', type = 'string'),
+                                operation = lambda row: get_hnum(row['address'])
+                                        ),
+                        dict(target=dict(name = 'street_name', type = 'string'),
+                                operation=lambda row: get_sname(row['address'])
+                                        )
+                        ]),
         dump_to_s3(resources=table_name, params=dict(base_path=base_path))
     ).process()
 
 if __name__ == "__main__":
-    site = 'https://www1.nyc.gov/html/dep/html/wastewater/wwsystem-plants.shtml'
-    hdr = {'User-Agent': 'Mozilla/5.0'}
-    req = Request(site,headers=hdr)
-    gcontext = ssl.SSLContext()
-    page = urlopen(req, context=gcontext)
-    soup = BeautifulSoup(page, features="lxml")
-    data = []
-    for i in soup.find_all('table', class_='table table-bordered'):
-        i1 = i.find('tbody')
-        title = i1.find('h2').get_text()
-        result = {}
-        for a in i1.find_all('tr'):
-            try: 
-                key = a.find('th').get_text().replace(':', '')
-                val = a.find('td').get_text().strip()
-                result[key] = val
-            except: 
-                continue
-        data.append(result)
-
-    ETL(data)
+   ETL()
