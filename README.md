@@ -57,11 +57,7 @@
     ```
      dump_to_postgis(resource='nycha_policeservice',
                         db_table_name='nycha_policeservice',
-<<<<<<< HEAD
                         engine='postgresql://postgres@localhost:5432/postgres',
-=======
-                        engine='postgresql://postgres:xxxx@localhost:5432/postgres',
->>>>>>> f918b72d79006f7943a0e3b3aeebec70533ee3ca
                         drcSRS='EPSG:4326',
                         srcSRS='EPSG:4326',
                         )
@@ -85,7 +81,7 @@
     + two different code base to maintain, inconsistant
     + dataflows is designed to replace pipelines
 
-## About version control
+## About version control ---> currently not working
 + __seperation of putting and pulling:__ 
     + putting: pull from open data and load into s3
         + versioned by dates
