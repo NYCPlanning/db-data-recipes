@@ -70,6 +70,9 @@ def ETL():
         Load('nysocfs_offices', 'latest'),
         Load('nysoasas_programs', 'latest'),
         Load('nysdoccs_corrections', 'latest'),
+        Load('nycdoc_corrections', 'latest'),
+        Load('dot_pedplazas', 'latest'),
+        Load('nycourts_courts', 'latest')
         dump_2_s3(params=dict(base_path=base_path))
     ).process()
 

@@ -15,7 +15,8 @@ setup(name='lib',
             'pytest',
             'dataflows', 
             'bs4',
-            'pandas'
+            'pandas', 
+            'usaddress'
       ], 
       entry_points='''
         [console_scripts]

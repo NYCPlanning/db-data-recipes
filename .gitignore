@@ -8,3 +8,5 @@
 *.egg-info/
 *__pycache__/
 settings.sh
+!recipes/nycourts_courts/nycourts_courts.csv
+!recipes/dep_wwtc/dep_wwtc.csv
