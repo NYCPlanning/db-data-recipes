@@ -21,7 +21,7 @@ def ETL():
     base_path = create_base_path(__file__)
     file_path = Path(__file__).parent/f'{file_name}'
     Flow(
-        load(str(file_path), name=table_name, force_strings=True),
+        load(str(file_path), name=table_name, format='xlsx', sheet=1, force_strings=True),
         joined_lower(resources=table_name),
         dump_to_s3(resources=table_name, params=dict(base_path=base_path))
     ).process()

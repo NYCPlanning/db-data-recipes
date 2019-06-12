@@ -13,6 +13,7 @@ def ETL(data):
         update_resource(None, name=table_name),
         update_resource(resources=table_name, path=table_name+'.csv'),
         joined_lower(resources=table_name),
+        delete_fields(['special','hascamp','hasfsl','hasfdc','hassff','hasihp']),
         dump_to_s3(resources=table_name, params=dict(base_path=base_path))
     ).process()
 
