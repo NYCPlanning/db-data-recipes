@@ -75,6 +75,7 @@ def ETL():
         Load('nycourts_courts', 'latest'),
         Load('dcp_facilities', 'latest'),
         Load('facilities_classification', 'latest'),
+        Load('nysparks_parks', 'latest'),
         dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
