@@ -10,16 +10,6 @@ def ETL():
     Flow(
         load(str(file_path), name=table_name, format='csv', force_strings=True),
         joined_lower(resources=table_name),
-        add_computed_field([dict(target=dict(name = 'zipcode', type = 'string'),
-                                operation=lambda row: get_zipcode(row['address'])
-                                        ),
-                        dict(target=dict(name = 'house_number', type = 'string'),
-                                operation = lambda row: get_hnum(row['address'])
-                                        ),
-                        dict(target=dict(name = 'street_name', type = 'string'),
-                                operation=lambda row: get_sname(row['address'])
-                                        )
-                        ]),
         dump_to_s3(resources=table_name, params=dict(base_path=base_path))
     ).process()
 
