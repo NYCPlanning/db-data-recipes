@@ -42,7 +42,7 @@ jobs:
       #     command: |
       #       cook pipeline run db-zoningtaxlots
 
-       - run:
+      - run:
           name: run developments
           command: |
             cook pipeline run db-developments
