@@ -4,7 +4,6 @@ from lib import joined_lower, create_base_path, dump_to_s3
 def ETL():
     table_name = 'hpd_hny_units_by_building'
     url = 'https://data.cityofnewyork.us/api/views/hg8x-zxpr/rows.csv?accessType=DOWNLOAD'
-
     base_path = create_base_path(__file__)
 
     Flow(
