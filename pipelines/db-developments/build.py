@@ -20,13 +20,14 @@ def ETL():
     base_path = create_base_path(__file__)
     
     Flow(
+        Load('dcp_hny_dob_matching_old', 'latest'),
         Load('dcp_housing_input_dcpattributes', 'latest'),
         Load('dcp_housing_input_lookup_occupancy', 'latest'),
         Load('dcp_housing_input_removals','latest'),
         Load('dcp_housing_input_lookup_status','latest'),
         Load('dob_cofos','latest'),
-        Load('dob_jobapplications','latest'),
-        Load('dob_permitissuance','latest'),
+        # Load('dob_jobapplications','latest'),
+        # Load('dob_permitissuance','latest'),
         Load('hpd_hny_units_by_building','latest'),
         Load('hpd_hny_units_by_project', 'latest'),
         dump_2_s3(params=dict(base_path=base_path))
