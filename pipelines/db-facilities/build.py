@@ -73,7 +73,7 @@ def ETL():
         Load('nycdoc_corrections', 'latest'),
         Load('dot_pedplazas', 'latest'),
         Load('nycourts_courts', 'latest'),
-        Load('dcp_facilities', 'latest'),
+        Load('dcp_sfpsd', 'latest'),
         Load('facilities_classification', 'latest'),
         Load('nysparks_parks', 'latest'),
         Load('doe_bluebook', 'latest'),
