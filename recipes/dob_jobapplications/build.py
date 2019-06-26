@@ -1,5 +1,5 @@
 from dataflows import *
-from lib import joined_lower, create_base_path, dump_to_s3
+from lib import create_base_path, dump_to_s3, remove_space_lower, rename_field
 
 def ETL():
     table_name = 'dob_jobapplications'
@@ -9,7 +9,18 @@ def ETL():
 
     Flow(
         load(url, name=table_name, format='csv', force_strings=True),
-        joined_lower(resources=table_name),
+        remove_space_lower(resources=table_name),
+        rename_field('binnumber', 'bin'),
+        rename_field('jobstatusdescrp', 'jobstatusdesc'),
+        rename_field('otherdescription','otherdesc'),
+        rename_field('existingnoofstories','existingnumstories'),
+        rename_field('proposednoofstories','proposednumstories'),
+        rename_field('ownerphonenumber', 'ownerphone'),
+        rename_field('gislatitude', 'latitude'),
+        rename_field('gislongitude', 'longitude'),
+        rename_field('giscouncildistrict', 'councildistrict'),
+        rename_field('giscensustract', 'censustract'),
+        rename_field('gisntaname', 'nta'),
         dump_to_s3(resources=table_name, params=dict(base_path=base_path))
     ).process()
 
