@@ -56,7 +56,7 @@ class PostgisDumper(FileDumper):
     @staticmethod
     def put_object(db_table_name, srcSRS, dstSRS, filename, engine):
         dstDS = gdal.OpenEx(engine, gdal.OF_VECTOR)
-        srcDS = gdal.OpenEx(filename, open_options=['AUTODETECT_TYPE=NO', 'GEOM_POSSIBLE_NAMES=the_geom'])
+        srcDS = gdal.OpenEx(filename, open_options=['AUTODETECT_TYPE=NO', 'EMPTY_STRING_AS_NULL=YES', 'GEOM_POSSIBLE_NAMES=the_geom'])
 
         gdal.VectorTranslate(
             dstDS,
