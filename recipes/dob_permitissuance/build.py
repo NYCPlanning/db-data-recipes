@@ -26,67 +26,14 @@ def ETL(table_name):
 
 if __name__ == '__main__':
     table_name = 'dob_permitissuance'
-    target_name =  ['BOROUGH',
-        'Binnum',
-        'Housenum',
-        'StreetName',
-        'Jobnum',
-        'Jobdocnum',
-        'JobType',
-        'Self_Cert',
-        'Block',
-        'Lot',
-        'CommunityBoard',
-        'ZipCode',
-        'BldgType',
-        'Residential',
-        'SpecialDistrict1',
-        'SpecialDistrict2',
-        'WorkType',
-        'PermitStatus',
-        'FilingStatus',
-        'PermitType',
-        'PermitSequencenum',
-        'PermitSubtype',
-        'OilGas',
-        'SiteFill',
-        'FilingDate',
-        'IssuanceDate',
-        'ExpirationDate',
-        'JobStartDate',
-        'PermitteeFirstName',
-        'PermitteeLastName',
-        'PermitteeBusinessName',
-        'PermitteePhonenum',
-        'PermitteeLicenseType',
-        'PermitteeLicensenum',
-        'ActSuperintendent',
-        'PermitteeOtherTitle',
-        'HICLicense',
-        'SiteSafetyMgrFirstName',
-        'SiteSafetyMgrLastName',
-        'SiteSafetyMgrBusinessName',
-        'SuperintendentFirstLastName',
-        'SuperintendentBusinessName',
-        'OwnerBusinessType',
-        'NonProfit',
-        'OwnerBusinessName',
-        'OwnerFirstName',
-        'OwnerLastName',
-        'OwnerHousenum',
-        'OwnerHouseStreetName',
-        'OwnerHouseCity',
-        'OwnerHouseState',
-        'OwnerHouseZipCode',
-        'OwnerPhonenum',
-        'DOBRunDate',
-        'PERMITSINO',
-        'LATITUDE',
-        'LONGITUDE',
-        'COUNCILDISTRICT',
-        'CENSUSTRACT',
-        'NTANAME']
-    target_header = ','.join(target_name)
+    target_header = "BOROUGH,Binnum,Housenum,StreetName,Jobnum,Jobdocnum,JobType,Self_Cert,Block,Lot,CommunityBoard,\
+        ZipCode,BldgType,Residential,SpecialDistrict1,SpecialDistrict2,WorkType,PermitStatus,FilingStatus,PermitType,\
+        PermitSequencenum,PermitSubtype,OilGas,SiteFill,FilingDate,IssuanceDate,ExpirationDate,JobStartDate,PermitteeFirstName,\
+        PermitteeLastName,PermitteeBusinessName,PermitteePhonenum,PermitteeLicenseType,PermitteeLicensenum,ActSuperintendent,\
+        PermitteeOtherTitle,HICLicense,SiteSafetyMgrFirstName,SiteSafetyMgrLastName,SiteSafetyMgrBusinessName,\
+        SuperintendentFirstLastName,SuperintendentBusinessName,OwnerBusinessType,NonProfit,OwnerBusinessName,OwnerFirstName,\
+        OwnerLastName,OwnerHousenum,OwnerHouseStreetName,OwnerHouseCity,OwnerHouseState,OwnerHouseZipCode,OwnerPhonenum,\
+        DOBRunDate,PERMITSINO,LATITUDE,LONGITUDE,COUNCILDISTRICT,CENSUSTRACT,NTANAME"
     download_file()
     ETL(table_name)
     clean_up()
