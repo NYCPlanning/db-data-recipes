@@ -7,6 +7,7 @@
 *.DS_Store
 *.egg-info/
 *__pycache__/
+*.pyc
 settings.sh
 !recipes/nycourts_courts/nycourts_courts.csv
 !recipes/dep_wwtc/dep_wwtc.csv
