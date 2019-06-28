@@ -3,9 +3,9 @@ from lib import joined_lower, create_base_path, dump_to_s3
 from pathlib import Path
 
 def ETL():
-    table_name = 'dob_cofos'
+    table_name = 'dcp_housing_input_lookup_occupancy'
     base_path = create_base_path(__file__)
-    file_path = Path(__file__).parent/'dob_cofos.csv'
+    file_path = Path(__file__).parent/'housing_input_lookup_occupancy.csv'
     Flow(
         load(str(file_path), name=table_name, format='csv', force_strings=True),
         joined_lower(resources=table_name),
