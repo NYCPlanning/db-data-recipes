@@ -2,8 +2,8 @@ from dataflows import *
 from lib import joined_lower, create_base_path, dump_to_s3
 
 def ETL():
-    table_name = 'dob_cofos'
-    url='https://raw.githubusercontent.com/NYCPlanning/db-developments/master/developments_build/data/dob_cofos.csv'
+    table_name = 'housing_input_hny_job_manual'
+    url='https://raw.githubusercontent.com/NYCPlanning/db-developments/master/developments_build/data/housing_input_hny_job_manual.csv'
 
     base_path = create_base_path(__file__)
 

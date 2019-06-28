@@ -20,11 +20,11 @@ def ETL():
     base_path = create_base_path(__file__)
     
     Flow(
-        Load('dcp_hny_dob_matching_old', 'latest'),
-        Load('dcp_housing_input_dcpattributes', 'latest'),
-        Load('dcp_housing_input_lookup_occupancy', 'latest'),
-        Load('dcp_housing_input_removals','latest'),
-        Load('dcp_housing_input_lookup_status','latest'),
+        Load('housing_input_hny_job_manual', 'latest'),
+        Load('housing_input_dcpattributes', 'latest'),
+        Load('housing_input_lookup_occupancy', 'latest'),
+        Load('housing_input_removals','latest'),
+        Load('housing_input_lookup_status','latest'),
         Load('dob_cofos','latest'),
         # Load('dob_jobapplications','latest'),
         # Load('dob_permitissuance','latest'),
