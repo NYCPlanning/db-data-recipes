@@ -12,7 +12,7 @@ def Load(recipe, version, **kwargs):
     print(url)
 
     return  Flow(
-        load(url, name=recipe, format='csv', force_strings=True)
+        load(url, name=recipe)
         )
 
 def ETL(): 
