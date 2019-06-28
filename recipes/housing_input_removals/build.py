@@ -3,8 +3,8 @@ from lib import dump_to_s3, get_resource, create_base_path, joined_lower
 import os
 
 def ETL():
-    table_name = 'dob_cofos'
-    url = 'https://raw.githubusercontent.com/NYCPlanning/db-developments/master/developments_build/data/dob_cofos.csv'
+    table_name = 'housing_input_removals'
+    url = 'https://raw.githubusercontent.com/NYCPlanning/db-developments/master/developments_build/data/housing_input_removals.csv'
     base_path = create_base_path(__file__)
 
     Flow(
