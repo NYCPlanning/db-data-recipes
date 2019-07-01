@@ -1,6 +1,5 @@
-from dataflows import Flow, load
-from lib import dump_to_s3, get_resource, create_base_path, joined_lower
-import os
+from dataflows import *
+from lib import joined_lower, create_base_path, dump_to_s3
 
 def ETL():
     table_name = 'housing_input_removals'
