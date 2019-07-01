@@ -21,11 +21,11 @@ def ETL():
     
     Flow(
         Load('housing_input_hny_job_manual', 'latest'),
-        Load('housing_input_dcpattributes', 'latest'),
-        Load('housing_input_lookup_occupancy', 'latest'),
+        # Load('housing_input_dcpattributes', 'latest'),
+        # Load('housing_input_lookup_occupancy', 'latest'),
         Load('housing_input_removals','latest'),
-        Load('housing_input_lookup_status','latest'),
-        Load('dob_cofos','latest'),
+        # Load('housing_input_lookup_status','latest'),
+        # Load('dob_cofos','latest'),
         # Load('dob_jobapplications','latest'),
         # Load('dob_permitissuance','latest'),
         Load('hpd_hny_units_by_building','latest'),

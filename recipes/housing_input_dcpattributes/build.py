@@ -1,17 +1,54 @@
-from dataflows import Flow, load
-from lib import dump_to_s3, get_resource, create_base_path, joined_lower
+from lib import joined_lower, create_base_path, dump_to_s3
+from lib.s3.make_client import make_client
+from boto3.s3.transfer import TransferConfig
 import os
+from pathlib import Path
+import urllib.request
+import os
+import mimetypes
+import time
 
-def ETL():
-    table_name = 'housing_input_dcpattributes'
+def download(table_name):
+    beg_ts = time.time()
     url = 'https://raw.githubusercontent.com/NYCPlanning/db-developments/master/developments_build/data/housing_input_dcpattributes.csv'
-    base_path = create_base_path(__file__)
+    os.mkdir(Path(__file__).parent/'tmp')
+    file_path = Path(__file__).parent/'tmp'/f'{table_name}.csv'
+    urllib.request.urlretrieve(url, file_path)
+    end_ts = time.time()
+    print(f'Downloaded to {file_path}, elapsed time: {end_ts - beg_ts}')
 
-    Flow(
-        load(url, name=table_name, format='csv', force_strings=True),
-        joined_lower(resources=table_name),
-        dump_to_s3(resources=table_name, params=dict(base_path=base_path))
-    ).process()
+
+def replace_header(table_name):
+    file_path = Path(__file__).parent/'tmp'/f'{table_name}.csv'
+    cmd = f"sed -i \"1s/.*/job_number,prop_stories,occ_init,dcp_occ_pr,dcp_occ_category,units_init,units_prop,units_prop_res,units_prop_hotel,u_net_comp,u_net_inc,unit_change_preapr2010,unit_change_postapr2010,unit_change_2011,unit_change_2012,unit_change_2013,unit_change_2014,unit_change_2015,unit_change_2016,unit_change_2017,unit_change_2018,x_mixeduse,bbl,bin,latitude,longitude,x_inactive,reason/\" {file_path}"
+    os.system(cmd)
+
+def clean_up(): 
+    tmp_path = Path(__file__).parent/'tmp'
+    os.system(f'rm -r {tmp_path}')
+
+def ETL(table_name):
+    key = str(Path(create_base_path(__file__))/f'{table_name}.csv')
+    file_path = str(Path(__file__).parent/'tmp'/f'{table_name}.csv')
+    content_type, _ = mimetypes.guess_type(key)
+    client = make_client()
+    bucket = os.environ.get('BUCKET')
+    config = TransferConfig(multipart_threshold=1024^2*100, max_concurrency=10,
+                        multipart_chunksize=1024^2*100, use_threads=True)
+
+    beg_ts = time.time()
+    client.upload_file(
+                Filename=file_path,
+                Bucket=bucket,
+                Config = config,
+                ExtraArgs={ 'ACL': 'public-read', 'ContentType': content_type or 'text/plain'},
+                Key=key)
+    end_ts = time.time()
+    print(f'dumped to {key}, elapsed time: {end_ts - beg_ts}')
 
 if __name__ == '__main__':
-    ETL()
+    table_name = 'housing_input_dcpattributes'
+    download(table_name)
+    replace_header(table_name)
+    ETL(table_name)
+    clean_up()
