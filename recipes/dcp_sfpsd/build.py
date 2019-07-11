@@ -17,11 +17,6 @@ def unzip(table_name):
     z.extractall(Path(__file__).parent/'tmp')
     os.system(f'rm {file_path}')
 
-def get_csv():
-    sourcePath = Path(__file__).parent
-    csv_file_path = [filepath for filepath in Path(sourcePath/'tmp').glob('**/*') if filepath.suffix == '.csv']
-    return csv_file_path[0]
-
 def clean_up():
     tmp_path = Path(__file__).parent/'tmp'
     os.system(f'rm -r {tmp_path}')
