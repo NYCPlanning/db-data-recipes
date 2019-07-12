@@ -13,3 +13,5 @@ settings.sh
 !recipes/dep_wwtc/dep_wwtc.csv
 !recipes/fbop_corrections/fbop_corrections.csv
 !recipes/dcp_sfpsd/dcp_sfpsd.csv
+!recipes/dcp_pops/dcp_pops.csv
+!recipes/nysed_activeinstitutions/nysed_activeinstitutions.csv
