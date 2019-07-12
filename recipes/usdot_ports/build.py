@@ -43,7 +43,7 @@ def ETL(table_name):
     ).process()
 
 if __name__ == '__main__':
-    url = 'https://opendata.arcgis.com/datasets/490e1e06b54b4a5bb1e58523a5d546a7_0.zip'
+    url = 'https://opendata.arcgis.com/datasets/93f52f638bb948de9e0f5b1b578bdfaa_0.zip'
     table_name = 'usdot_ports'
 
     unzip(url)
