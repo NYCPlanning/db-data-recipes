@@ -2,7 +2,7 @@ from dataflows import *
 from lib import joined_lower, create_base_path, dump_to_s3
 
 def ETL():
-    table_name = 'doitt_buildingfootprints'
+    table_name = 'doitt_buildingcentroids'
     url = 'https://data.cityofnewyork.us/api/views/y3cb-wkyu/rows.csv?accessType=DOWNLOAD'
 
     base_path = create_base_path(__file__)

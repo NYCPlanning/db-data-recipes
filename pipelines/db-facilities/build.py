@@ -78,7 +78,7 @@ def ETL():
         Load('nysparks_parks', 'latest'),
         Load('doe_bluebook', 'latest'),
         Load('acs_daycareheadstart', 'latest'),
-        Load('doitt_buildingfootprints', 'latest'),
+        Load('doitt_buildingcentroids', 'latest'),
         dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
