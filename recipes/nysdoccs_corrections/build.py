@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 from urllib.request import Request, urlopen
 import ssl
 import json
-import pandas as pd
 
 def ETL(data):
     table_name = 'nysdoccs_corrections'
