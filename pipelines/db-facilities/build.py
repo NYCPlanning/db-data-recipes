@@ -79,6 +79,15 @@ def ETL():
         Load('doe_bluebook', 'latest'),
         Load('acs_daycareheadstart', 'latest'),
         Load('doitt_buildingcentroids', 'latest'),
+        # load geo boundaries
+        Load('dcp_boroboundaries_wi', 'latest'),
+        Load('dcp_cdboundaries', 'latest'),
+        Load('dcp_censustracts', 'latest'),
+        Load('dcp_councildistricts', 'latest'),
+        Load('dcp_ntaboundaries', 'latest'),
+        Load('dcp_policeprecincts', 'latest'),
+        Load('dcp_school_districts', 'latest'),
+        Load('doitt_zipcodeboundaries', 'latest'),
         dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
