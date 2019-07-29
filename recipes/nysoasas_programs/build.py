@@ -21,7 +21,7 @@ def ETL(data):
     ).process()
 
 if __name__ == '__main__':
-    url = 'https://www.oasas.ny.gov/providerDirectory/download/Treatment_Providers_OASAS_Directory_Search_11-Jun-19.csv'
+    url = 'https://www.oasas.ny.gov/providerDirectory/download/Treatment_Providers_OASAS_Directory_Search_29-Jul-19.csv'
     hdr = {'User-Agent': 'Mozilla/5.0'}
     req = Request(url,headers=hdr)
     gcontext = ssl.SSLContext()
