@@ -16,3 +16,4 @@ settings.sh
 !recipes/dcp_pops/dcp_pops.csv
 !recipes/nysed_activeinstitutions/nysed_activeinstitutions.csv
 !recipes/foodbankny_foodbanks/foodbankny_foodbanks.csv
+!recipes/nysoasas_programs/nysoasas_programs.csv
