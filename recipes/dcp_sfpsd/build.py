@@ -36,12 +36,9 @@ if __name__ == '__main__':
     unzip(table_name)
     file_path = Path(__file__).parent/'tmp'/'facilities_20190110.csv'
     df = pd.read_csv(file_path, dtype = 'str')
-    dcp_sfpsd = ['amtrak_facilities_sfpsd', 'bbpc_facilities_sfpsd',
-                'hrpt_facilities_sfpsd', 'mta_facilities_sfpsd',
-                'nysdot_facilities_sfpsd', 'panynj_facilities_sfpsd',
-                'tgi_facilities_sfpsd', 'dcas_facilities_colp',
-                'rioc_facilities_sfpsd'] 
-    df = df[df.pgtable.isin(dcp_sfpsd)]
+    df = df[df.pgtable.str.contains('amtrak_facilities_sfpsd|bbpc_facilities_sfpsd|hrpt_facilities_sfpsd|'\
+                                    'mta_facilities_sfpsd|nysdot_facilities_sfpsd|panynj_facilities_sfpsd|'\
+                                    'tgi_facilities_sfpsd|rioc_facilities_sfpsd')]
     df.to_csv(Path(__file__).parent/'dcp_sfpsd.csv')
     ETL(table_name)
     clean_up()
