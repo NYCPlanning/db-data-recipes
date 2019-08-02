@@ -3,6 +3,7 @@ from lib import joined_lower, create_base_path, dump_to_s3
 import os
 from pathlib import Path
 import urllib.request
+import pandas as pd
 
 ftp_prefix = os.environ.get('FTP_PREFIX')
 
@@ -16,11 +17,13 @@ def clean_up():
     tmp_path = Path(__file__).parent/'tmp'
     os.system(f'rm -r {tmp_path}')
 
-def ETL():
+def ETL(data):
+    
     base_path = create_base_path(__file__)
-    file_path = Path(__file__).parent/'tmp'/f'{table_name}.xlsx'
     Flow(
-        load(str(file_path), name=table_name, format='xlsx', sheet=1, force_strings=True),
+        data,
+        update_resource(None, name=table_name),
+        update_resource(resources=table_name, path=table_name+'.csv'),
         joined_lower(resources=table_name),
         dump_to_s3(resources=table_name, params=dict(base_path=base_path))
     ).process()
@@ -28,5 +31,12 @@ def ETL():
 if __name__ == '__main__':
     table_name = 'moeo_socialservicesiteloactions'
     download_file()
-    ETL()
+    file_path = Path(__file__).parent/'tmp'/f'{table_name}.xlsx'
+    classification_link = 'https://raw.githubusercontent.com/NYCPlanning/db-data-recipes/master/recipes/moeo_socialservicesiteloactions/moeo_socialservicesiteloactions_classification.csv'
+    df1 = pd.ExcelFile(file_path).parse('Sheet1', dtype = 'str')
+    df2 = pd.read_csv(classification_link, dtype = 'str')
+    df = pd.merge(df1, df2, how = 'left', on = 'PROGRAM_NAME')
+    df.fillna('',inplace=True)
+    data = df.to_dict('records')
+    ETL(data)
     clean_up()
