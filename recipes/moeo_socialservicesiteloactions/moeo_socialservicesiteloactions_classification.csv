@@ -1,15 +1,15 @@
 PROGRAM_NAME,facdomain,facgroup,facsubgrp,factype
 "ADDRESSING HEALTH DISPARITIES IMPACTING LESBIAN, GAY, BISEXUAL AND TRANSGENDER POPULATIONS",Health and Human Services,Health Care,Health Promotion and Disease Prevention,
 ADVOCACY SERVICES,Health and Human Services,Health Care,Health Promotion and Disease Prevention,
-AFFIRMATIVE BUSINESS/INDUSTRY,Health and Human Services,Human Services,Mental Health,Drop In
-ASSERTIVE COMMUNITY TREATMENT,Health and Human Services,Human Services,Mental Health,Community Center
+AFFIRMATIVE BUSINESS/INDUSTRY,Health and Human Services,Human Services,Mental Health,Support Mental Health
+ASSERTIVE COMMUNITY TREATMENT,Health and Human Services,Human Services,Mental Health,Support Mental Health
 ASSISTED COMPETITIVE EMPLOYMENT,Health and Human Services,Human Services,Workforce Development,
 ASTHMA COUNSELOR PROGRAM (EAST HARLEM),Health and Human Services,Health Care,Health Promotion and Disease Prevention,
 CASE MANAGEMENT,Health and Human Services,Human Services,Programs for People with Disabilities,Programs for People with Disabilities
 CHECK HEP B [574],Health and Human Services,Health Care,Hospitals and Clinics,Diagnostic and Treatment Center
 CHECK HEP C [574],Health and Human Services,Health Care,Hospitals and Clinics,Diagnostic and Treatment Center
 CHLAMYDIA SCREENING PROGRAM,Health and Human Services,Health Care,Hospitals and Clinics,Diagnostic and Treatment Center
-CITY COUNCIL INITIATIVES [574],Health and Human Services,Health Care,Other Health Care,Community Center
+CITY COUNCIL INITIATIVES [574],Health and Human Services,Health Care,Other Health Care,Health Facility
 CLINIC TREATMENT,Health and Human Services,Health Care,Hospitals and Clinics,Diagnostic and Treatment Center
 COMMUNITY MOBILIZATION INTERVENTIONS FOR HIV PREVENTION,Health and Human Services,Health Care,Health Promotion and Disease Prevention,
 COMMUNITY RESIDENTIAL,Health and Human Services,Health Care,Hospitals and Clinics,Health Facility
@@ -25,7 +25,7 @@ CRISIS INTERVENTION,Health and Human Services,Health Care,Mental Health,Crisis S
 CRISIS/RESPITE BEDS,Health and Human Services,Health Care,Mental Health,Crisis Sevices Mental Health
 CRYSTAL METHAMPHETAMINE HARM REDUCTION SERVICES,Health and Human Services,Health Care,Chemical Dependency,
 CUSTOMIZED ASSISTANCE SERVICES (CAS),Health and Human Services,Human Services,Legal and Intervention Services,Legal Services Initiatives
-"DEMONSTRATION PROJECTS FOR INNOVATIVE, HIGH-IMPACT HIV PREVENTION INTERVENTIONS AND STRATEGIES",Health and Human Services,Health Care,Health Promotion and Disease Prevention,
+"DEMONSTRATION PROJECTS FOR INNOVATIVE, HIGH-IMPACT HIV PREVENTION INTERVENTIONS AND STRATEGIES",Health and Human Services,Health Care,Health Promotion and Disease Prevention,HIV Prevention Services
 DROP-IN CENTERS,Health and Human Services,Human Services,Soup Kitchens and Food Pantries,Soup Kitchen
 EARLY INTERVENTION RESPITE CARE - DEVELOPMENTAL DISABILITIES,Health and Human Services,Health Care,Other Health Care,Programs for People with Disabilities
 EARLY INTERVENTION SERVICES (EIS),Health and Human Services,Health Care,Other Health Care,Health Facility
@@ -35,9 +35,9 @@ EARLY INTERVENTION SERVICES: ROUTINE TESTING IN CLINICAL SETTINGS,Health and Hum
 EARLY INTERVENTION SERVICES: SOCIAL NETWORK STRATEGY TESTING IN NON-CLINICAL SETTINGS,Health and Human Services,Health Care,Health Promotion and Disease Prevention,Support Mental Health
 EARLY LEARN NYC: NEW YORK CITY'S EARLY CARE AND EDUCATION SERVICES,"Education, Child Welfare, and Youth",Child Care and Pre-Kindergarten,Child Care,Early Learn NYC: New York City's Early Care and Education Services
 EPILEPSY SERVICES,Health and Human Services,Health Care,Other Health Care,Workforce Development
-EVENTS TO PROMOTE THE HEALTH & WELLNESS OF BLACK MEN WHO HAVE SEX WITH MEN,Health and Human Services,Health Care,Health Promotion and Disease Prevention,
+EVENTS TO PROMOTE THE HEALTH & WELLNESS OF BLACK MEN WHO HAVE SEX WITH MEN,Health and Human Services,Health Care,Health Promotion and Disease Prevention,HIV Prevention Services
 EVIDENCE-BASED INTERVENTIONS IN CLINICAL SETTINGS,Health and Human Services,Health Care,Hospitals and Clinics,Health Facility
-FAITH-BASED INITIATIVE,Health and Human Services,Health Care,Health Promotion and Disease Prevention,Community Center
+FAITH-BASED INITIATIVE,Health and Human Services,Health Care,Health Promotion and Disease Prevention,Harm Reduction Center
 FAMILY SUPPORT SERVICES,Health and Human Services,Health Care,Mental Health,
 FOOD AND NUTRITION,Health and Human Services,Human Services,Soup Kitchens and Food Pantries,Soup Kitchen
 FOOD AND NUTRITION SERVICES,Health and Human Services,Human Services,Soup Kitchens and Food Pantries,Soup Kitchen
@@ -49,7 +49,7 @@ HARM REDUCTION SERVICES,Health and Human Services,Health Care,Health Promotion a
 HEALTH EDUCATION AND RISK REDUCTION,Health and Human Services,Health Care,Health Promotion and Disease Prevention,
 HEP-C PEER NAVIGATION [574],Health and Human Services,Health Care,Health Promotion and Disease Prevention,
 HIV PEER INNOVATOR PROJECT,Health and Human Services,Health Care,Other Health Care,
-HIV PREVENTION NAVIGATION AT NYC DOHMH BSTDC CLINICS FOR MSM OF COLOR AND TRANSGENDER PERSONS,Health and Human Services,Health Care,Health Promotion and Disease Prevention,
+HIV PREVENTION NAVIGATION AT NYC DOHMH BSTDC CLINICS FOR MSM OF COLOR AND TRANSGENDER PERSONS,Health and Human Services,Health Care,Health Promotion and Disease Prevention,HIV Prevention Services
 HIV TESTING AND STATUS NEUTRAL PREVENTION AND CARE NAVIGATION IN BROOKLYN,Health and Human Services,Health Care,Hospitals and Clinics,Diagnostic and Treatment Center
 HIV TESTING SERVICES: PRIORITY POPULATIONS TESTING IN NON-CLINICAL SETTINGS,Health and Human Services,Health Care,Hospitals and Clinics,Diagnostic and Treatment Center
 HIV TESTING SERVICES: ROUTINE TESTING IN CLINICAL SETTINGS,Health and Human Services,Health Care,Hospitals and Clinics,Diagnostic and Treatment Center
@@ -76,7 +76,7 @@ MENTAL HEALTH SERVICES,Health and Human Services,Health Care,Mental Health,Suppo
 MENTAL HEALTH SERVICES FOR POPULATIONS WITH MULTIPLE SPECIAL NEEDS,Health and Human Services,Health Care,Mental Health,Support Mental Health
 METH HARM REDUCTION SERVICES,Health and Human Services,Health Care,Chemical Dependency,
 METHADONE MAINTENANCE,Health and Human Services,Health Care,Chemical Dependency,Diagnostic and Treatment Center
-MICA NETWORK,Health and Human Services,Health Care,Mental Health,
+MICA NETWORK,Health and Human Services,Health Care,Mental Health,Support Mental Health
 NON-MEDICAID CARE COORDINATION (OMH),Health and Human Services,Health Care,Mental Health,
 NON-MEDICAID CARE COORDINATION; (NON-LICENSED PROGRAM),Health and Human Services,Health Care,Mental Health,
 NON-MEDICAL CASE MANAGEMENT FOR CURRENTLY INCARCERATED OR RECENTLY RELEASED INDIVIDUALS LIVING WITH HIV,Health and Human Services,Health Care,Mental Health,
@@ -118,7 +118,7 @@ SELF-HELP,Health and Human Services,Health Care,Mental Health,Support Mental Hea
 SEXUAL AND BEHAVIORAL HEALTH SERVICES FOR PRIORITY POPULATIONS MOST HEAVILY IMPACTED BY HIV,Health and Human Services,Health Care,Other Health Care,
 SINGLE POINT OF ACCESS,Health and Human Services,Health Care,Mental Health,
 STATUS-NEUTRAL CARE COORDINATION,Health and Human Services,Health Care,Other Health Care,
-STRUCTURAL-LEVEL CHANGE TO ADDRESS BARRIERS TO HIV PREVENTION AMONG HIGH-RISK/HIGH-PREVALENCE POPULATIONS,Health and Human Services,Health Care,Health Promotion and Disease Prevention,
+STRUCTURAL-LEVEL CHANGE TO ADDRESS BARRIERS TO HIV PREVENTION AMONG HIGH-RISK/HIGH-PREVALENCE POPULATIONS,Health and Human Services,Health Care,Health Promotion and Disease Prevention,HIV Prevention Services
 SUMMER CAMP,"Education, Child Welfare, and Youth",Camps,Camps,Camp - School Age
 SUPPORTED HOUSING,Health and Human Services,Health Care,Other Health Care,Supportive Housing
 SUPPORTIVE COUNSELING & FAMILY STABILIZATION SERVICES - GENERAL,Health and Human Services,Health Care,Other Health Care,
