@@ -20,7 +20,7 @@ def download(table_name):
 
 def replace_header(table_name):
     file_path = Path(__file__).parent/'tmp'/f'{table_name}.csv'
-    cmd = f"sed -i \"1s/.*/job_number,prop_stories,occ_init,dcp_occ_pr,dcp_occ_category,units_init,units_prop,units_prop_res,units_prop_hotel,u_net_comp,u_net_inc,unit_change_preapr2010,unit_change_postapr2010,unit_change_2011,unit_change_2012,unit_change_2013,unit_change_2014,unit_change_2015,unit_change_2016,unit_change_2017,unit_change_2018,x_mixeduse,bbl,bin,latitude,longitude,x_inactive,reason/\" {file_path}"
+    cmd = f"sed -i \"1s/.*/job_number,prop_stories,occ_init,dcp_occ_pr,dcp_occ_category,units_init,units_prop,units_prop_res,units_prop_hotel,u_net_comp,u_net_inc,unit_change_preapr2010,unit_change_postapr2010,unit_change_2011,unit_change_2012,unit_change_2013,unit_change_2014,unit_change_2015,unit_change_2016,unit_change_2017,unit_change_2018,x_mixeduse,bbl,bin,latitude,longitude,x_inactive,hny_id,reason,extra/\" {file_path}"
     os.system(cmd)
 
 def clean_up(): 
