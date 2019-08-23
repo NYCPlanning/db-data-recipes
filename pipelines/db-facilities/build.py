@@ -88,6 +88,7 @@ def ETL():
         Load('dcp_policeprecincts', 'latest'),
         Load('dcp_school_districts', 'latest'),
         Load('doitt_zipcodeboundaries', 'latest'),
+        Load('fdny_firehouses', 'latest'),
         dump_2_s3(params=dict(base_path=base_path))
     ).process()
 
