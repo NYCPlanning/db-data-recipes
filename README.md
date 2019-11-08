@@ -1,5 +1,9 @@
 # db-data-recipes [![CircleCI](https://circleci.com/gh/NYCPlanning/db-data-recipes.svg?style=svg)](https://circleci.com/gh/NYCPlanning/db-data-recipes)
 
+## FacDB dataloading
++ initiate the etl docker
++ run ```sh dataloading.sh``` to load all facilities recipes
+
 ## Instructions
 + run ```source settings.sh``` at root directory
     + settings.sh sets environmental variable

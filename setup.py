@@ -16,7 +16,8 @@ setup(name='lib',
             'dataflows', 
             'bs4',
             'pandas', 
-            'usaddress'
+            'usaddress',
+            'lxml'
       ], 
       entry_points='''
         [console_scripts]

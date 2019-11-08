@@ -8,7 +8,7 @@ import csv
 csv.field_size_limit(sys.maxsize)
 
 def download_unzip(): 
-    url = 'https://irma.nps.gov/DataStore/DownloadFile/627620'
+    url = 'https://irma.nps.gov/DataStore/DownloadFile/630692'
     path = Path(__file__).parent/'nps_boundry.zip'
     target = Path(__file__).parent/'nps_boundry'
     os.system(f'curl -o {path} {url}')

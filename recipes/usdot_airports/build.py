@@ -10,7 +10,7 @@ import zipfile
 
 
 def unzip():
-    url = 'https://opendata.arcgis.com/datasets/a36a509eab4e43b4864fb594a35b90d6_0.zip'
+    url = 'https://opendata.arcgis.com/datasets/831853ab8b714a81b6a3e21d0b164a4e_0.zip'
     file_path = Path(__file__).parent/'tmp.zip'
     urllib.request.urlretrieve(url, file_path)
     z = zipfile.ZipFile(file_path)
@@ -41,6 +41,16 @@ def ETL():
     Flow(
         load(str(file_path), name=table_name, format='csv', force_strings=True),
         joined_lower(resources=table_name),
+        filter_rows(equals = [
+            dict(state_name = 'NEW YORK')
+        ]),
+        filter_rows(equals = [
+            dict(county = 'NEW YORK'),
+            dict(county = 'BRONX'),
+            dict(county = 'KINGS'),
+            dict(county = 'QUEENS'),
+            dict(county = 'RICHMOND')
+        ]),
         dump_to_s3(resources=table_name, params=dict(base_path=base_path))
     ).process()
 
